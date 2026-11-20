@@ -249,3 +249,5 @@ button { font: inherit; }
 /* Link "pular para o conteúdo" aparece ao receber foco pelo teclado */
 .sr-only:focus { position: fixed; top: 12px; left: 12px; width: auto; height: auto; clip: auto; z-index: 100; background: #fff; color: var(--marinho); padding: 12px 18px; border-radius: 999px; box-shadow: var(--sombra); }
 .hero__foto .foto-vazia, .hero-cond__foto .foto-vazia { padding-top: calc(var(--header-h) + 24px); }
+.mapa--link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; text-decoration: none; color: var(--marinho); font-weight: 600; padding: 24px; }
+.mapa--link .icone { width: 36px; height: 36px; color: var(--azul); }

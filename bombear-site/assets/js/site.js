@@ -3,7 +3,7 @@
 (function () {
   "use strict";
   var D = window.BOMBEAR;
-  var pagina = document.body.getAttribute("data-pagina") || "inicio";
+  var pagina = document.body.getAttribute("data-pagina") || window.BOMBEAR_PAGINA || "inicio";
   var reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- utilitários ---------- */
@@ -196,7 +196,9 @@
           "</div>" +
           '<nav aria-label="Rodapé"><p class="rodape__rotulo">Navegue</p><ul class="rodape__nav">' + nav + "</ul></nav>" +
           "<div>" +
-            '<iframe class="mapa" src="' + esc(c.mapaEmbed) + '" title="Mapa da loja ' + esc(D.empresa.nome) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+            (c.mapaEmbed
+              ? '<iframe class="mapa" src="' + esc(c.mapaEmbed) + '" title="Mapa da loja ' + esc(D.empresa.nome) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              : '<a class="mapa mapa--link" href="' + esc(c.mapaRota) + '" target="_blank" rel="noopener">' + ICONES.pin + '<span>' + esc(c.endereco) + '<br>' + esc(c.cidade) + ' — ' + esc(c.uf) + '</span></a>') +
             '<a class="link-seta" href="' + esc(c.mapaRota) + '" target="_blank" rel="noopener">Ver rota no Google Maps ' + ICONES.seta + "</a>" +
           "</div>" +
         "</div>" +
