@@ -251,3 +251,8 @@ button { font: inherit; }
 .hero__foto .foto-vazia, .hero-cond__foto .foto-vazia { padding-top: calc(var(--header-h) + 24px); }
 .mapa--link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; text-decoration: none; color: var(--marinho); font-weight: 600; padding: 24px; }
 .mapa--link .icone { width: 36px; height: 36px; color: var(--azul); }
+
+/* No celular o texto ocupa a largura toda: véu vertical mais forte para manter a leitura */
+@media (max-width: 700px) {
+  .hero__veu { background: linear-gradient(180deg, rgba(247,251,250,.93) 0%, rgba(247,251,250,.88) 70%, rgba(247,251,250,.6) 100%); }
+}

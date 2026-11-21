@@ -337,7 +337,11 @@
       if (atual === -1 || reduzMovimento) { trocar(); } else { texto.classList.add("trocando"); setTimeout(trocar, 300); }
       atual = i;
       if (focar) abas[i].focus();
-      abas[i].scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduzMovimento ? "auto" : "smooth" });
+      /* Desliza só a barra de abas na horizontal; nunca rola a página. */
+      var barra = abas[i].parentNode, rA = abas[i].getBoundingClientRect(), rB = barra.getBoundingClientRect();
+      if (rA.left < rB.left || rA.right > rB.right) {
+        barra.scrollTo({ left: barra.scrollLeft + rA.left - rB.left - 16, behavior: reduzMovimento ? "auto" : "smooth" });
+      }
     }
 
     abas.forEach(function (a, i) {

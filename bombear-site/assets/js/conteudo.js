@@ -97,9 +97,9 @@ window.BOMBEAR = {
   hero: {
     linha1: "A bomba certa para",
     palavras: [
-      { palavra: "Irrigação", foto: { src: null, alt: "Gramado sendo irrigado por aspersores ao entardecer" } },
+      { palavra: "Irrigação", foto: { src: "assets/img/hero-irrigacao.webp", alt: "Gramado de sítio irrigado por aspersores ao pôr do sol, com cavalo no pasto ao fundo" } },
       { palavra: "Indústria", foto: { src: null, alt: "Bomba centrífuga instalada em casa de máquinas" } },
-      { palavra: "Lazer",     foto: { src: null, alt: "Piscina de casa no Eusébio com água limpa" } }
+      { palavra: "Lazer",     foto: { src: "assets/img/hero-lazer.webp", alt: "Piscina com cascata e hidromassagem em casa de alto padrão" } }
     ],
     paragrafo: "Bombas, irrigação, piscina e jardinagem em um só lugar. A gente entende o problema antes de indicar o produto e continua atendendo depois da compra.",
     ctaPrincipal: "Falar com a Bombear",
