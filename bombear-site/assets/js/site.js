@@ -19,28 +19,40 @@
     return "https://wa.me/" + encodeURIComponent(D.contato.whatsapp) +
       "?text=" + encodeURIComponent(D.contato.mensagemWhatsapp + (extra || ""));
   }
-  function foto(f, classe) {
+  function foto(f, eager) {
     f = f || {};
     if (f.src) {
-      return '<img class="foto ' + (classe || "") + '" src="' + esc(f.src) + '" alt="' + esc(f.alt) + '" loading="lazy" decoding="async">';
+      return '<img class="foto" src="' + esc(f.src) + '" alt="' + esc(f.alt) + '"' + (eager ? "" : ' loading="lazy"') + ' decoding="async">';
     }
-    return '<div class="foto-vazia ' + (classe || "") + '" role="img" aria-label="' + esc(f.alt || "Foto") + '"><span>Foto aqui · ' + esc(f.alt || "") + "</span></div>";
+    return '<div class="foto-vazia" role="img" aria-label="' + esc(f.alt || "Foto") + '"><span>Foto aqui · ' + esc(f.alt || "") + "</span></div>";
+  }
+  function svg(corpo, classe, sw) {
+    return '<svg class="' + (classe || "icone") + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (sw || 2) + '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + corpo + "</svg>";
   }
   var ICONES = {
-    whats: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>',
-    chat: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>',
-    seta: '<svg class="icone seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-    diag: '<svg class="icone seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
-    chevron: '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>',
-    voltar: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>',
-    menu: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
-    fechar: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
-    pin: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
-    fone: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>',
-    relogio: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
-    insta: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
-    face: '<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/></svg>'
+    whats: svg('<path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.5 8.5 0 1 1 21 11.5z"/>'),
+    chat: svg('<path d="M4 5h16v11H8l-4 4z"/>'),
+    seta: svg('<path d="M5 12h14M13 6l6 6-6 6"/>', "icone seta", 2.2),
+    diag: svg('<path d="M7 17 17 7M8 7h9v9"/>', "icone seta", 2.2),
+    check: svg('<path d="M20 6 9 17l-5-5"/>', "icone", 2.5),
+    chevron: svg('<path d="m6 9 6 6 6-6"/>', "chevron", 2.4),
+    voltar: svg('<path d="M19 12H5M11 18l-6-6 6-6"/>'),
+    menu: svg('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+    fechar: svg('<path d="M6 6l12 12M18 6 6 18"/>'),
+    pin: svg('<path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>'),
+    fone: svg('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'),
+    relogio: svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+    insta: svg('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>'),
+    face: svg('<path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h2z"/>'),
+    /* ícones dos pilares, desenhados no traço da marca */
+    gota: svg('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>', "pilar__icone", 1.6),
+    lista: svg('<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/>', "pilar__icone", 1.6),
+    bomba: svg('<circle cx="9" cy="13" r="5"/><path d="M14 13h7M17 9v8M9 8V4h4"/>', "pilar__icone", 1.6),
+    casa: svg('<path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5h6v5"/>', "pilar__icone", 1.6)
   };
+  /* contorno da casa do símbolo (mesmo desenho do logo), em volta da foto do topo */
+  var CONTORNO_CASA = '<svg class="casa__contorno" viewBox="0 0 100 106" preserveAspectRatio="none" aria-hidden="true">' +
+    '<path d="M38 104H3V42L50 3L97 42V104H62" fill="none" stroke="currentColor" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   /* ---------- tema: cores e fontes vêm do arquivo de conteúdo ---------- */
   function aplicarTema() {
@@ -50,7 +62,6 @@
     Object.keys(mapa).forEach(function (k) { if (c[k]) r.setProperty(mapa[k], c[k]); });
     r.setProperty("--f-titulo", '"' + f.titulo + '", "Arial Black", sans-serif');
     r.setProperty("--f-corpo", '"' + f.corpo + '", Arial, sans-serif');
-    r.setProperty("--f-mono", '"' + f.mono + '", ui-monospace, monospace');
     var pre = document.createElement("link"); pre.rel = "preconnect"; pre.href = "https://fonts.gstatic.com"; pre.crossOrigin = "";
     var link = document.createElement("link"); link.rel = "stylesheet"; link.href = f.googleFonts;
     document.head.appendChild(pre); document.head.appendChild(link);
@@ -89,7 +100,7 @@
     document.head.appendChild(sc);
   }
 
-  /* ---------- aberto agora? ---------- */
+  /* ---------- aberto agora? (só com horário confirmado) ---------- */
   function estaAberto() {
     var h = D.contato.horarios, agora = new Date();
     var dia = h[agora.getDay()];
@@ -129,14 +140,14 @@
 
     $("#header").innerHTML =
       '<header class="header"><div class="container header__barra">' +
-        '<a class="header__logo" href="index.html" aria-label="' + esc(D.empresa.nome) + ', página inicial"><img src="' + esc(D.empresa.logo) + '" alt="' + esc(D.empresa.nome) + " · " + esc(D.empresa.slogan) + '" width="180" height="51"></a>' +
+        '<a class="header__logo" href="index.html" aria-label="' + esc(D.empresa.nome) + ', página inicial"><img src="' + esc(D.empresa.logo) + '" alt="' + esc(D.empresa.nome) + " · " + esc(D.empresa.slogan) + '" width="155" height="44"></a>' +
         (subpagina ? '<a class="voltar" href="index.html">' + ICONES.voltar + "Voltar à página inicial</a>" : "") +
         '<nav class="nav" aria-label="Principal"><ul class="nav__lista">' + itens + "</ul>" +
         '<a class="btn btn--whats" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.whats + "WhatsApp</a></nav>" +
         '<button class="hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">' + ICONES.menu + "</button>" +
       "</div></header>" +
       '<div class="menu-mobile" id="menu-mobile" role="dialog" aria-modal="true" aria-label="Menu">' +
-        '<div class="menu-mobile__topo"><img src="' + esc(D.empresa.logoNegativo) + '" alt="' + esc(D.empresa.nome) + '"><button class="menu-mobile__fechar" type="button" aria-label="Fechar menu">' + ICONES.fechar + "</button></div>" +
+        '<div class="menu-mobile__topo"><img src="' + esc(D.empresa.logo) + '" alt="' + esc(D.empresa.nome) + '"><button class="menu-mobile__fechar" type="button" aria-label="Fechar menu">' + ICONES.fechar + "</button></div>" +
         "<ul>" + mobile + "</ul>" +
         '<a class="btn btn--whats" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.whats + "Falar no WhatsApp</a>" +
       "</div>";
@@ -174,18 +185,21 @@
   /* ---------- rodapé ---------- */
   function renderRodape() {
     var c = D.contato;
-    var nav = D.menu.filter(function (m) { return m.rotulo !== "Condomínios"; }).map(function (m) {
+    var nav = D.menu.map(function (m) {
       return '<li><a href="' + esc(m.href) + '">' + esc(m.rotulo) + "</a></li>";
     }).join("");
+    var mapa = c.mapaEmbed
+      ? '<iframe class="mapa" src="' + esc(c.mapaEmbed) + '" title="Mapa da loja ' + esc(D.empresa.nome) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+      : '<a class="mapa mapa--link" href="' + esc(c.mapaRota) + '" target="_blank" rel="noopener">' + ICONES.pin + "<span>" + esc(c.endereco) + "<br>" + esc(c.cidade) + " — " + esc(c.uf) + "</span></a>";
     $("#rodape").innerHTML =
       '<footer class="rodape"><div class="container">' +
         '<div class="rodape__grade">' +
           "<div>" +
-            '<img class="rodape__logo" src="' + esc(D.empresa.logo) + '" alt="' + esc(D.empresa.nome) + " · " + esc(D.empresa.slogan) + '" loading="lazy">' +
+            '<img class="rodape__logo" src="' + esc(D.empresa.logoNegativo) + '" alt="' + esc(D.empresa.nome) + " · " + esc(D.empresa.slogan) + '" loading="lazy">' +
             "<p>" + esc(D.empresa.frase) + "</p>" +
             '<ul class="rodape__info">' +
               "<li>" + ICONES.pin + "<span>" + esc(c.endereco) + ", " + esc(c.cidade) + " — " + esc(c.uf) + ", " + esc(c.cep) + "</span></li>" +
-              "<li>" + ICONES.fone + '<a href="tel:' + esc(c.telefone.replace(/\D/g, "")) + '" style="text-decoration:none">' + esc(c.telefone) + "</a></li>" +
+              "<li>" + ICONES.fone + '<a href="tel:' + esc(c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></li>" +
               "<li>" + ICONES.relogio + "<span>" + esc(c.horarioTexto) + "</span></li>" +
             "</ul>" + seloAberto("Aberto agora") +
             '<div class="sociais">' +
@@ -195,10 +209,7 @@
             "</div>" +
           "</div>" +
           '<nav aria-label="Rodapé"><p class="rodape__rotulo">Navegue</p><ul class="rodape__nav">' + nav + "</ul></nav>" +
-          "<div>" +
-            (c.mapaEmbed
-              ? '<iframe class="mapa" src="' + esc(c.mapaEmbed) + '" title="Mapa da loja ' + esc(D.empresa.nome) + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-              : '<a class="mapa mapa--link" href="' + esc(c.mapaRota) + '" target="_blank" rel="noopener">' + ICONES.pin + '<span>' + esc(c.endereco) + '<br>' + esc(c.cidade) + ' — ' + esc(c.uf) + '</span></a>') +
+          "<div>" + mapa +
             '<a class="link-seta" href="' + esc(c.mapaRota) + '" target="_blank" rel="noopener">Ver rota no Google Maps ' + ICONES.seta + "</a>" +
           "</div>" +
         "</div>" +
@@ -206,259 +217,200 @@
       "</div></footer>";
   }
 
-  /* ---------- HOME ---------- */
-  function renderHome() {
-    var h = D.hero, q = D.quemSomosResumo, k = D.ctaContato, c = D.contato;
+  /* ---------- blocos reutilizados ---------- */
+  function casaComFotos(fotos, legendas) {
+    return '<div class="casa">' + CONTORNO_CASA +
+      '<div class="casa__fotos">' + fotos.map(function (f, i) {
+        return '<div class="casa__foto' + (i === 0 ? " ativa" : "") + '">' + foto(f, i === 0) + "</div>";
+      }).join("") + "</div>" +
+      (legendas ? '<span class="casa__legenda" aria-hidden="true">' + esc(legendas[0]) + "</span>" : "") +
+    "</div>";
+  }
 
-    var fotosHero = h.palavras.map(function (p, i) {
-      return '<div class="hero__foto' + (i === 0 ? " ativa" : "") + '">' + foto(p.foto) + "</div>";
-    }).join("");
-    var palavras = h.palavras.map(function (p, i) {
-      return '<span class="palavra-giro__item' + (i === 0 ? " ativa" : "") + '"' + (i === 0 ? "" : ' aria-hidden="true"') + '><span class="titulo-g">' + esc(p.palavra) + "</span></span>";
-    }).join("");
-
-    var abas = D.categorias.map(function (cat, i) {
-      return '<button class="aba" type="button" role="tab" id="aba-' + esc(cat.id) + '" aria-controls="vitrine" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-i="' + i + '">' + esc(cat.nome) + "</button>";
-    }).join("");
-    var fotosCat = D.categorias.map(function (cat, i) {
-      return '<div class="vitrine__foto' + (i === 0 ? " ativa" : "") + '">' + foto(cat.foto) + "</div>";
-    }).join("");
-
-    var lista = q.itens.map(function (it, i) {
-      return '<li class="revelar"><span class="n">' + pad(i + 1) + "</span><strong>" + esc(it.titulo) + "</strong><p>" + esc(it.texto) + "</p></li>";
-    }).join("");
-
-    var marcas = D.marcas.lista.map(function (m) {
-      return '<div class="marca">' + (m.logo ? '<img src="' + esc(m.logo) + '" alt="' + esc(m.nome) + '" loading="lazy">' : esc(m.nome)) + "</div>";
-    }).join("");
-
-    $("#conteudo").innerHTML =
-      /* HERO */
-      '<section class="hero" aria-labelledby="hero-titulo">' +
-        '<div class="hero__fotos" aria-hidden="true">' + fotosHero + "</div><div class=\"hero__veu\"></div>" +
-        '<div class="container hero__conteudo">' +
-          '<h1 id="hero-titulo"><span class="hero__linha1">' + esc(h.linha1) + '</span><span class="sr-only"> ' + esc(h.palavras.map(function (p) { return p.palavra; }).join(", ")) + "</span>" +
-          '<span class="palavra-giro" aria-hidden="true">' + palavras + "</span></h1>" +
-          '<p class="lead">' + esc(h.paragrafo) + "</p>" +
-          '<div class="hero__acoes">' +
-            '<a class="btn btn--azul" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.chat + esc(h.ctaPrincipal) + ICONES.seta + "</a>" +
-            '<a class="link-seta" href="#categorias">' + esc(h.ctaSecundario) + " " + ICONES.seta + "</a>" +
-          "</div>" +
-        "</div>" +
-        '<a class="role" href="#categorias" aria-label="Rolar para as categorias">ROLE<span class="role__linha"></span></a>' +
-      "</section>" +
-
-      /* CATEGORIAS */
-      '<section class="secao" id="categorias" aria-labelledby="cat-titulo"><div class="container">' +
-        '<p class="eyebrow revelar">Produtos</p>' +
-        '<h2 class="titulo-m revelar" id="cat-titulo" style="margin-bottom:40px">O que tem na loja</h2>' +
-        '<div class="vitrine revelar" id="vitrine" role="tabpanel" aria-live="polite">' + fotosCat + '<div class="vitrine__veu"></div>' +
-          '<div class="vitrine__texto"><span class="vitrine__num"></span><h3 class="vitrine__titulo"></h3><p class="vitrine__sub"></p>' +
-          '<a class="btn btn--acento vitrine__btn" href="#" target="_blank" rel="noopener">Ver produtos ' + ICONES.diag + "</a></div>" +
-        "</div>" +
-        '<div class="abas" role="tablist" aria-label="Categorias de produtos">' + abas + "</div>" +
-      "</div></section>" +
-
-      /* QUEM SOMOS RESUMO */
-      '<section class="secao" style="background:var(--fundo-suave)" aria-labelledby="qs-titulo"><div class="container duas-col">' +
-        "<div>" +
-          '<p class="eyebrow revelar">' + esc(q.eyebrow) + "</p>" +
-          '<h2 class="titulo-m revelar" id="qs-titulo">' + q.tituloLinhas.map(esc).join("<br>") + "</h2>" +
-          '<p class="revelar" style="margin:28px 0 0;max-width:52ch">' + esc(q.paragrafo) + "</p>" +
-          '<ol class="lista-num">' + lista + "</ol>" +
-          '<a class="link-seta revelar" href="quem-somos.html" style="margin-top:16px">Conheça a nossa história ' + ICONES.seta + "</a>" +
-        "</div>" +
-        '<div class="card-foto revelar">' + foto(q.foto) + '<div class="card-foto__veu"></div>' +
-          '<span class="badge-local"><span class="ponto"></span>' + esc(q.badge) + "</span>" +
-          '<div class="card-foto__numero"><b>' + esc(q.numero) + "</b><span>" + esc(q.numeroUnidade) + "</span><small>" + esc(q.numeroRotulo) + "</small></div>" +
-        "</div>" +
-      "</div></section>" +
-
-      /* MARCAS */
-      '<section class="secao" id="marcas" aria-labelledby="marcas-titulo"><div class="container">' +
-        '<div class="marcas-topo revelar"><div><p class="eyebrow">Marcas</p><h2 class="titulo-m" id="marcas-titulo" style="font-size:clamp(30px,4vw,56px)">' + esc(D.marcas.titulo) + "</h2></div>" +
-        '<p style="margin:0;max-width:36ch">' + esc(D.marcas.subtitulo) + "</p></div>" +
-        '<div class="marcas-grade revelar">' + marcas + "</div>" +
-      "</div></section>" +
-
-      /* CONTATO */
-      '<section class="secao" id="contato" style="padding-top:0" aria-labelledby="contato-titulo"><div class="container duas-col">' +
-        "<div>" +
-          '<p class="eyebrow revelar">' + esc(k.eyebrow) + "</p>" +
-          '<h2 class="titulo-g revelar" id="contato-titulo" style="font-size:clamp(44px,6.4vw,96px)">' + esc(k.tituloAntes) + ' <span class="sublinhado">' + esc(k.tituloDestaque) + "</span> " + esc(k.tituloDepois) + "</h2>" +
-          '<p class="lead revelar" style="margin-top:28px">' + esc(k.paragrafo) + "</p>" +
-          '<a class="btn btn--azul revelar" style="margin-top:32px" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.whats + esc(k.botao) + ICONES.seta + "</a>" +
-        "</div>" +
-        '<div class="card-info revelar"><dl>' +
-          '<div class="info-linha"><dt>Endereço</dt><dd>' + esc(c.endereco) + "<br>" + esc(c.cidade) + " — " + esc(c.uf) + "</dd></div>" +
-          '<div class="info-linha"><dt>Telefone</dt><dd><a href="tel:' + esc(c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></dd></div>" +
-          '<div class="info-linha"><dt>E-mail</dt><dd><a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a></dd></div>" +
-          '<div class="info-linha"><dt>Horário</dt><dd>' + esc(c.horarioTexto) + "<br>" + seloAberto("Estamos abertos") + "</dd></div>" +
-        "</dl></div>" +
+  function blocoContato() {
+    var k = D.ctaContato, c = D.contato;
+    return '<section class="contato secao" id="contato" aria-labelledby="contato-titulo">' +
+      '<img class="contato__simbolo" src="' + esc(D.empresa.simboloNegativo) + '" alt="" aria-hidden="true">' +
+      '<div class="container" style="position:relative">' +
+        '<p class="rotulo">' + esc(k.eyebrow) + "</p>" +
+        '<h2 class="titulo-g" id="contato-titulo">' + esc(k.tituloAntes) + " <em>" + esc(k.tituloDestaque) + "</em> " + esc(k.tituloDepois) + "</h2>" +
+        '<p class="lead">' + esc(k.paragrafo) + "</p>" +
+        '<div class="contato__acoes"><a class="btn btn--whats" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.whats + esc(k.botao) + ICONES.seta + "</a></div>" +
+        '<dl class="contato__info">' +
+          "<div><dt>Endereço</dt><dd>" + esc(c.endereco) + "<br>" + esc(c.cidade) + " — " + esc(c.uf) + "</dd></div>" +
+          '<div><dt>Telefone</dt><dd><a href="tel:' + esc(c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></dd></div>" +
+          '<div><dt>E-mail</dt><dd><a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a></dd></div>" +
+          "<div><dt>Horário</dt><dd>" + esc(c.horarioTexto) + "<br>" + seloAberto("Estamos abertos") + "</dd></div>" +
+        "</dl>" +
       "</div></section>";
   }
 
-  function ligarHero() {
-    var itens = $$(".palavra-giro__item"), fotos = $$(".hero__foto");
-    if (itens.length < 2 || reduzMovimento) return;
-    var i = 0;
-    setInterval(function () {
-      var atual = itens[i];
-      atual.classList.remove("ativa"); atual.classList.add("saindo");
-      fotos[i] && fotos[i].classList.remove("ativa");
-      setTimeout(function () { atual.classList.remove("saindo"); }, 700);
-      i = (i + 1) % itens.length;
-      itens[i].classList.add("ativa");
-      fotos[i] && fotos[i].classList.add("ativa");
-    }, 3000);
+  /* ---------- HOME ---------- */
+  function renderHome() {
+    var h = D.hero, q = D.quemSomosResumo;
+
+    var palavras = h.palavras.map(function (p, i) {
+      return '<span class="agua__item' + (i === 0 ? " ativa" : "") + '">' + esc(p.palavra) + '<span class="agua__cheia">' + esc(p.palavra) + "</span></span>";
+    }).join("");
+
+    var paineis = D.categorias.map(function (cat, i) {
+      return '<div class="painel' + (i === 0 ? " ativo" : "") + '" id="cat-' + esc(cat.id) + '" data-i="' + i + '">' +
+        '<div class="painel__foto">' + foto(cat.foto) + '</div><div class="painel__veu"></div>' +
+        '<button class="painel__botao" type="button" aria-expanded="' + (i === 0) + '" aria-controls="cat-conteudo-' + i + '"><span>' + esc(cat.nome) + "</span></button>" +
+        '<div class="painel__conteudo" id="cat-conteudo-' + i + '">' +
+          '<span class="painel__num">' + pad(i + 1) + " / " + pad(D.categorias.length) + "</span>" +
+          '<h3 class="painel__titulo">' + esc(cat.nome) + "</h3>" +
+          '<p class="painel__sub">' + esc(cat.subtitulo) + "</p>" +
+          '<a class="btn btn--claro" href="' + linkWhats(cat.nome.toLowerCase() + ".") + '" target="_blank" rel="noopener"' + (i === 0 ? "" : ' tabindex="-1"') + ">Ver produtos " + ICONES.diag + "</a>" +
+        "</div>" +
+      "</div>";
+    }).join("");
+
+    var processo = q.itens.map(function (it, i) {
+      return '<li><span class="conexao" aria-hidden="true">' + (i + 1) + '</span><h3 class="titulo-p">' + esc(it.titulo) + "</h3><p>" + esc(it.texto) + "</p></li>";
+    }).join("");
+
+    var marcas = D.marcas.lista.map(function (m) {
+      return '<li class="marca">' + (m.logo ? '<img src="' + esc(m.logo) + '" alt="' + esc(m.nome) + '" loading="lazy">' : esc(m.nome)) + "</li>";
+    }).join("");
+
+    $("#conteudo").innerHTML =
+      /* TOPO */
+      '<section class="hero" aria-labelledby="hero-titulo"><div class="container hero__grade">' +
+        "<div>" +
+          '<h1 id="hero-titulo"><span class="hero__linha1">' + esc(h.linha1) + "</span>" +
+          '<span class="sr-only">' + esc(h.palavras.map(function (p) { return p.palavra; }).join(", ")) + "</span>" +
+          '<span class="agua" aria-hidden="true">' + palavras + "</span></h1>" +
+          '<p class="lead">' + esc(h.paragrafo) + "</p>" +
+          '<div class="hero__acoes">' +
+            '<a class="btn btn--azul" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.chat + esc(h.ctaPrincipal) + ICONES.seta + "</a>" +
+            '<a class="btn btn--contorno" href="#categorias">' + esc(h.ctaSecundario) + "</a>" +
+          "</div>" +
+          '<div class="hero__selos"><span>' + ICONES.check + "Diagnóstico sem custo</span><span>" + ICONES.check + "Nota fiscal e garantia</span><span>" + ICONES.check + "Entrega na região</span></div>" +
+        "</div>" +
+        casaComFotos(h.palavras.map(function (p) { return p.foto; }), h.palavras.map(function (p) { return p.palavra; })) +
+      "</div></section>" +
+
+      /* CATEGORIAS */
+      '<section class="secao" id="categorias" style="padding-top:0" aria-labelledby="cat-titulo"><div class="container">' +
+        '<div class="cat-topo"><div><p class="rotulo">Produtos</p><h2 class="titulo-m" id="cat-titulo">O que tem na loja</h2></div>' +
+        '<p style="margin:0;max-width:40ch">Toque numa categoria para abrir. Cada uma leva direto ao WhatsApp com a pergunta pronta.</p></div>' +
+        '<div class="sanfona">' + paineis + "</div>" +
+      "</div></section>" +
+
+      /* QUEM SOMOS */
+      '<section class="secao" style="background:var(--fundo-suave)" aria-labelledby="qs-titulo"><div class="container">' +
+        '<div class="qs-topo"><div><p class="rotulo">' + esc(q.eyebrow) + '</p><h2 class="titulo-m" id="qs-titulo">' + esc(q.titulo) + "</h2></div>" +
+        '<div><p style="margin:0">' + esc(q.paragrafo) + '</p><a class="link-seta" href="quem-somos.html">Conheça a nossa história ' + ICONES.seta + "</a></div></div>" +
+        '<h3 class="sr-only">' + esc(q.processoTitulo) + "</h3>" +
+        '<ol class="processo">' + processo + "</ol>" +
+      "</div></section>" +
+
+      /* MARCAS */
+      '<section class="marcas" id="marcas" aria-labelledby="marcas-titulo"><div class="container marcas__grade">' +
+        '<div><p class="rotulo">Marcas</p><h2 class="titulo-p" id="marcas-titulo" style="font-size:clamp(24px,2.4vw,32px)">' + esc(D.marcas.titulo) + '</h2><p style="margin:10px 0 0;font-size:16px">' + esc(D.marcas.subtitulo) + "</p></div>" +
+        '<ul class="marcas__lista">' + marcas + "</ul>" +
+      "</div></section>" +
+
+      blocoContato();
   }
 
+  /* Topo: a palavra enche de água e a foto sobe dentro da casa, a cada 4 s */
+  function ligarHero() {
+    var itens = $$(".agua__item"), fotos = $$(".casa__foto"), legenda = $(".casa__legenda");
+    if (!itens.length) return;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { itens[0].classList.add("cheio"); }); });
+    if (itens.length < 2 || reduzMovimento) { itens[0].classList.add("cheio"); return; }
+    var i = 0;
+    setInterval(function () {
+      var velho = itens[i], fotoVelha = fotos[i];
+      velho.classList.add("esvaziando");
+      i = (i + 1) % itens.length;
+      setTimeout(function () {
+        velho.classList.remove("ativa", "cheio", "esvaziando");
+        itens[i].classList.add("ativa");
+        requestAnimationFrame(function () { requestAnimationFrame(function () { itens[i].classList.add("cheio"); }); });
+        fotos.forEach(function (f) { f.classList.remove("anterior"); });
+        if (fotoVelha) { fotoVelha.classList.remove("ativa"); fotoVelha.classList.add("anterior"); }
+        if (fotos[i]) fotos[i].classList.add("ativa");
+        if (legenda) legenda.textContent = D.hero.palavras[i].palavra;
+      }, 500);
+    }, 4000);
+  }
+
+  /* Categorias: sanfona. Sem troca automática e sem rolar a página. */
   function ligarCategorias() {
-    var abas = $$(".aba"), fotos = $$(".vitrine__foto"), texto = $(".vitrine__texto");
-    if (!abas.length) return;
-    var atual = -1, timer = null, pausado = false;
-
-    function mostrar(i, focar) {
-      if (i === atual) return;
-      var cat = D.categorias[i];
-      abas.forEach(function (a, j) {
-        a.setAttribute("aria-selected", j === i ? "true" : "false");
-        a.tabIndex = j === i ? 0 : -1;
+    var paineis = $$(".painel");
+    if (!paineis.length) return;
+    function abrir(i, focar) {
+      paineis.forEach(function (p, j) {
+        var ativo = j === i;
+        p.classList.toggle("ativo", ativo);
+        $(".painel__botao", p).setAttribute("aria-expanded", ativo ? "true" : "false");
+        $(".painel__conteudo a", p).tabIndex = ativo ? 0 : -1;
       });
-      fotos.forEach(function (f, j) { f.classList.toggle("ativa", j === i); });
-      $("#vitrine").setAttribute("aria-labelledby", "aba-" + cat.id);
-      function trocar() {
-        $(".vitrine__num", texto).textContent = pad(i + 1) + " / " + pad(D.categorias.length);
-        $(".vitrine__titulo", texto).textContent = cat.nome;
-        $(".vitrine__sub", texto).textContent = cat.subtitulo;
-        $(".vitrine__btn", texto).href = linkWhats(cat.nome.toLowerCase() + ".");
-        texto.classList.remove("trocando");
-      }
-      if (atual === -1 || reduzMovimento) { trocar(); } else { texto.classList.add("trocando"); setTimeout(trocar, 300); }
-      atual = i;
-      if (focar) abas[i].focus();
-      /* Desliza só a barra de abas na horizontal; nunca rola a página. */
-      var barra = abas[i].parentNode, rA = abas[i].getBoundingClientRect(), rB = barra.getBoundingClientRect();
-      if (rA.left < rB.left || rA.right > rB.right) {
-        barra.scrollTo({ left: barra.scrollLeft + rA.left - rB.left - 16, behavior: reduzMovimento ? "auto" : "smooth" });
-      }
+      if (focar) $(".painel__conteudo a", paineis[i]).focus({ preventScroll: true });
     }
-
-    abas.forEach(function (a, i) {
-      a.addEventListener("click", function () { mostrar(i); reiniciar(); });
-      a.addEventListener("keydown", function (e) {
-        var n = abas.length, alvo = null;
-        if (e.key === "ArrowRight") alvo = (i + 1) % n;
-        if (e.key === "ArrowLeft") alvo = (i - 1 + n) % n;
-        if (e.key === "Home") alvo = 0;
-        if (e.key === "End") alvo = n - 1;
-        if (alvo !== null) { e.preventDefault(); mostrar(alvo, true); reiniciar(); }
-      });
+    paineis.forEach(function (p, i) {
+      $(".painel__botao", p).addEventListener("click", function () { abrir(i, true); });
     });
-
-    function reiniciar() {
-      clearInterval(timer);
-      if (reduzMovimento) return;
-      timer = setInterval(function () { if (!pausado) mostrar((atual + 1) % abas.length); }, 6000);
-    }
-    var area = $("#categorias");
-    area.addEventListener("mouseenter", function () { pausado = true; });
-    area.addEventListener("mouseleave", function () { pausado = false; });
-    area.addEventListener("focusin", function () { pausado = true; });
-    area.addEventListener("focusout", function (e) { if (!area.contains(e.relatedTarget)) pausado = false; });
-
     function pelaHash() {
       var m = location.hash.match(/^#cat-(.+)$/);
-      if (!m) return false;
+      if (!m) return;
       var idx = D.categorias.findIndex(function (c) { return c.id === m[1]; });
-      if (idx < 0) return false;
-      mostrar(idx);
-      area.scrollIntoView({ behavior: reduzMovimento ? "auto" : "smooth" });
-      return true;
+      if (idx < 0) return;
+      abrir(idx);
+      $("#categorias").scrollIntoView({ behavior: reduzMovimento ? "auto" : "smooth" });
     }
-    window.addEventListener("hashchange", function () { if (pelaHash()) reiniciar(); });
-    if (!pelaHash()) mostrar(0);
-    reiniciar();
+    window.addEventListener("hashchange", pelaHash);
+    pelaHash();
   }
 
   /* ---------- QUEM SOMOS ---------- */
   function renderQuemSomos() {
     var p = D.paginaQuemSomos;
-    var fotos = p.fotos.concat(p.fotos).map(function (f, i) {
-      return '<div class="faixa-fotos__item"' + (i >= p.fotos.length ? ' aria-hidden="true"' : "") + ">" + foto(f) + "</div>";
-    }).join("");
+    var icones = [ICONES.gota, ICONES.lista, ICONES.bomba, ICONES.casa];
+    var fotos = p.fotos.map(function (f) { return "<div>" + foto(f) + "</div>"; }).join("");
     var pilares = p.pilares.map(function (it, i) {
-      return '<div class="pilar revelar"><span class="n">' + pad(i + 1) + '</span><h3 class="titulo-p">' + esc(it.titulo) + "</h3><p>" + esc(it.texto) + "</p></div>";
+      return '<li class="pilar">' + (icones[i] || ICONES.gota) + '<h3 class="titulo-p">' + esc(it.titulo) + "</h3><p>" + esc(it.texto) + "</p></li>";
     }).join("");
     $("#conteudo").innerHTML =
       '<section class="topo-pagina"><div class="container">' +
-        '<p class="eyebrow">' + esc(p.eyebrow) + "</p>" +
-        '<h1 class="titulo-g">' + p.tituloLinhas.map(esc).join("<br>") + "</h1>" +
-        '<p class="lead" style="margin-top:28px;max-width:56ch">' + esc(p.intro) + "</p>" +
+        '<p class="rotulo">' + esc(p.eyebrow) + "</p>" +
+        '<h1 class="titulo-g" style="max-width:16ch">' + esc(p.titulo) + "</h1>" +
+        '<p class="lead" style="margin-top:24px;max-width:58ch">' + esc(p.intro) + "</p>" +
       "</div></section>" +
-      '<div class="faixa-fotos" aria-label="Fotos da loja"><div class="faixa-fotos__trilho">' + fotos + "</div></div>" +
-      '<section class="secao"><div class="container"><div class="pilares">' + pilares + "</div>" +
-        '<div style="margin-top:48px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center">' +
+      '<div class="container"><div class="mosaico">' + fotos + "</div></div>" +
+      '<section class="secao"><div class="container">' +
+        '<ul class="pilares">' + pilares + "</ul>" +
+        '<div style="margin-top:56px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">' +
           '<a class="btn btn--azul" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.chat + "Falar com a Bombear" + ICONES.seta + "</a>" +
-          '<a class="link-seta" href="index.html#categorias">Ver categorias ' + ICONES.seta + "</a>" +
+          '<a class="btn btn--contorno" href="index.html#categorias">Ver categorias</a>' +
         "</div>" +
-      "</div></section>";
+      "</div></section>" + blocoContato();
   }
 
-  /* ---------- CONDOMÍNIOS ---------- */
-  function letrasEscalonadas(linhas) {
-    var atraso = 0;
-    return linhas.map(function (linha) {
-      return linha.split(" ").map(function (palavra) {
-        var html = '<span style="display:inline-block;white-space:nowrap">' + palavra.split("").map(function (l) {
-          atraso += 0.025;
-          return '<span class="letra" style="animation-delay:' + atraso.toFixed(3) + 's">' + esc(l) + "</span>";
-        }).join("") + "</span>";
-        atraso += 0.04;
-        return html;
-      }).join(" ");
-    }).join("<br>");
-  }
+  /* ---------- CONDOMÍNIOS (página fora do menu) ---------- */
   function renderCondominios() {
     var p = D.paginaCondominios;
-    var areas = p.areas.map(function (a, i) {
-      return '<div class="area revelar"><span class="n">' + pad(i + 1) + '</span><h3 class="titulo-p">' + esc(a.titulo) + "</h3><p>" + esc(a.texto) + "</p></div>";
+    var areas = p.areas.map(function (a) {
+      return '<div class="area"><h3 class="titulo-p">' + esc(a.titulo) + "</h3><p>" + esc(a.texto) + "</p></div>";
     }).join("");
     $("#conteudo").innerHTML =
-      '<section class="hero-cond" aria-labelledby="cond-titulo">' +
-        '<div class="hero-cond__foto" aria-hidden="true">' + foto(p.foto) + "</div>" +
-        '<div class="hero-cond__veu"></div>' +
-        '<img class="hero-cond__simbolo" src="' + esc(D.empresa.simboloNegativo) + '" alt="" aria-hidden="true">' +
-        '<div class="container">' +
-          '<p class="eyebrow eyebrow--traco">' + esc(p.eyebrow) + "</p>" +
-          '<h1 class="titulo-g" id="cond-titulo" aria-label="' + esc(p.tituloLinhas.join(" ")) + '"><span aria-hidden="true">' + letrasEscalonadas(p.tituloLinhas) + "</span></h1>" +
-          '<p class="lead">' + esc(p.subtitulo) + "</p>" +
-          '<a class="btn btn--whats" style="margin-top:32px" href="' + linkWhats("o condomínio ") + '" target="_blank" rel="noopener">' + ICONES.whats + "Pedir cotação" + ICONES.seta + "</a>" +
-        "</div>" +
-      "</section>" +
-      '<section class="secao"><div class="container">' +
-        '<p class="eyebrow revelar">Condomínios</p>' +
-        '<h2 class="titulo-m revelar">' + esc(p.areasTitulo) + "</h2>" +
-        '<div class="areas">' + areas + "</div>" +
+      '<section class="hero" aria-labelledby="cond-titulo"><div class="container hero__grade">' +
+        "<div>" +
+          '<p class="rotulo">' + esc(p.eyebrow) + "</p>" +
+          '<h1 class="titulo-g" id="cond-titulo">' + esc(p.titulo) + "</h1>" +
+          '<p class="lead" style="margin-top:24px">' + esc(p.subtitulo) + "</p>" +
+          '<div class="hero__acoes"><a class="btn btn--whats" href="' + linkWhats("o condomínio ") + '" target="_blank" rel="noopener">' + ICONES.whats + "Pedir cotação" + ICONES.seta + "</a></div>" +
+        "</div>" + casaComFotos([p.foto]) +
       "</div></section>" +
       '<section class="secao" style="padding-top:0"><div class="container">' +
-        '<div class="cta-card revelar"><img src="' + esc(D.empresa.simbolo) + '" alt="" aria-hidden="true">' +
-          "<p>" + esc(p.ctaTexto) + "</p>" +
-          '<a class="btn btn--azul" href="' + linkWhats("o condomínio ") + '" target="_blank" rel="noopener">' + ICONES.chat + esc(p.ctaBotao) + ICONES.seta + "</a>" +
-        "</div>" +
+        '<p class="rotulo">Condomínios</p><h2 class="titulo-m">' + esc(p.areasTitulo) + "</h2>" +
+        '<div class="areas">' + areas + "</div>" +
+        '<div class="faixa-cta" style="margin-top:48px"><p>' + esc(p.ctaTexto) + "</p>" +
+          '<a class="btn btn--azul" href="' + linkWhats("o condomínio ") + '" target="_blank" rel="noopener">' + ICONES.chat + esc(p.ctaBotao) + ICONES.seta + "</a></div>" +
       "</div></section>";
-  }
-
-  /* ---------- revelar ao rolar ---------- */
-  function ligarRevelar() {
-    var els = $$(".revelar");
-    if (reduzMovimento || !("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("visivel"); }); return; }
-    var io = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("visivel"); io.unobserve(en.target); }
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-    els.forEach(function (e, i) { e.style.transitionDelay = ((i % 4) * 80) + "ms"; io.observe(e); });
   }
 
   /* ---------- início ---------- */
@@ -470,6 +422,6 @@
   if (pagina === "condominios") renderCondominios();
   renderRodape();
   ligarHeader();
-  if (pagina === "inicio") { ligarHero(); ligarCategorias(); }
-  ligarRevelar();
+  ligarHero();
+  if (pagina === "inicio") ligarCategorias();
 })();

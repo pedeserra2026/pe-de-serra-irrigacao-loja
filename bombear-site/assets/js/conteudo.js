@@ -18,12 +18,12 @@ window.BOMBEAR = {
     cores: {
       fundo:        "#F7FBFA", // Espuma — fundo geral
       fundoSuave:   "#E4F3F2", // Névoa — seções alternadas e skeleton
-      rodape:       "#FFFFFF",
+      rodape:       "#0F2E3A", // Grafite — rodapé escuro (usa a assinatura negativa)
       marinho:      "#0A3A63", // Azul Profundo — títulos e texto forte
       azul:         "#0073B0", // Azul Límpido — botões primários
       whatsapp:     "#2BA84A", // Verde Broto — botão WhatsApp (texto Grafite)
-      acento:       "#7ED957", // Verde claro da versão negativa do símbolo — aba ativa e "Ver produtos"
-      destaque:     "#2EC4D6", // Turquesa Lagoa — número de destaque e sublinhados
+      acento:       "#7ED957", // Verde claro da versão negativa do símbolo — jatos e destaques sobre fundo escuro
+      destaque:     "#2EC4D6", // Turquesa Lagoa — água: enchimento da palavra, fluxo do cano, rótulos
       texto:        "#3E5661", // Grafite suavizado — texto corrido (passa contraste AA)
       grafite:      "#0F2E3A", // Grafite — texto sobre verdes
       linha:        "#D5E6E4"  // bordas finas
@@ -31,8 +31,7 @@ window.BOMBEAR = {
     fontes: {
       titulo: "Outfit",          // Manual de Marca: Outfit nos títulos
       corpo:  "Figtree",         // Manual de Marca: Figtree no texto
-      mono:   "JetBrains Mono",  // rótulos e numeração
-      googleFonts: "https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+      googleFonts: "https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Figtree:wght@400;500;600;700&display=swap"
     }
   },
 
@@ -119,18 +118,14 @@ window.BOMBEAR = {
   /* ---------- HOME: QUEM SOMOS (resumo) ---------- */
   quemSomosResumo: {
     eyebrow: "Quem somos",
-    tituloLinhas: ["Gente que", "entende", "de água"],
+    titulo: "Gente que entende de água",
     paragrafo: "A Bombear nasceu da Pé de Serra Irrigação, que há 3 anos dimensiona bombas e sistemas de irrigação no Ceará. No Eusébio, trouxemos o mesmo jeito de trabalhar: entender o problema antes de indicar o produto.",
     itens: [
       { titulo: "Diagnóstico antes da venda", texto: "Altura, distância, vazão e uso. Você manda foto ou vídeo, a gente faz as contas." },
       { titulo: "O projeto inteiro numa lista", texto: "Equipamento, tubos, conexões e elétrica juntos. Nada de voltar três vezes por um adaptador." },
       { titulo: "Depois da venda, o mesmo WhatsApp", texto: "Manual da sua máquina, orientação de instalação e alguém para responder." }
     ],
-    foto: { src: null, alt: "Fachada da loja Bombear na Av. Eusébio de Queiróz" },
-    badge: "Eusébio · CE",
-    numero: "3",
-    numeroUnidade: "anos",
-    numeroRotulo: "de campo na Pé de Serra"
+    processoTitulo: "Como a gente atende"
   },
 
   /* ---------- HOME: MARCAS ---------- */
@@ -159,7 +154,7 @@ window.BOMBEAR = {
   /* ---------- PÁGINA QUEM SOMOS ---------- */
   paginaQuemSomos: {
     eyebrow: "Quem somos",
-    tituloLinhas: ["Água no lugar certo,", "na pressão certa."],
+    titulo: "Água no lugar certo, na pressão certa.",
     intro: "Somos a loja do Eusébio da família Pé de Serra Irrigação. Trouxemos para cá fornecedores consolidados, processos testados e o hábito de perguntar antes de vender.",
     fotos: [
       { src: null, alt: "Fachada da loja" },
@@ -178,7 +173,7 @@ window.BOMBEAR = {
   /* ---------- PÁGINA CONDOMÍNIOS ---------- */
   paginaCondominios: {
     eyebrow: "Para síndicos e administradoras",
-    tituloLinhas: ["Um fornecedor", "para a água", "do seu", "condomínio"],
+    titulo: "Um fornecedor para a água do seu condomínio",
     subtitulo: "Bombas de recalque, piscina, irrigação da área verde e a parte elétrica das bombas, com nota fiscal, cotação rápida e atendimento técnico.",
     foto: { src: null, alt: "Área de lazer de condomínio com piscina" },
     areasTitulo: "Áreas que cobrimos",
