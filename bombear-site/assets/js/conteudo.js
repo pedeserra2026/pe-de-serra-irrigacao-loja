@@ -87,7 +87,6 @@ window.BOMBEAR = {
   /* ---------- MENU ---------- */
   menu: [
     { rotulo: "Produtos", href: "index.html#categorias", dropdown: true },
-    { rotulo: "Condomínios", href: "condominios.html", pagina: "condominios" },
     { rotulo: "Quem Somos", href: "quem-somos.html", pagina: "quemSomos" },
     { rotulo: "Marcas", href: "index.html#marcas" },
     { rotulo: "Contato", href: "index.html#contato" }
