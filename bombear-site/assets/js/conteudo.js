@@ -52,7 +52,7 @@ window.BOMBEAR = {
 
   /* ---------- CONTATO ---------- */
   contato: {
-    endereco: "Av. Eusébio de Queiróz, 523",
+    endereco: "CE-040, 523",
     cidade: "Eusébio",
     uf: "CE",
     cep: "[CEP]",
@@ -60,19 +60,19 @@ window.BOMBEAR = {
     whatsapp: "55[DDD][NUMERO]",           // só números, com 55 + DDD
     mensagemWhatsapp: "Olá! Vim pelo site da Bombear e quero ajuda com ",
     email: "[EMAIL]@[DOMINIO].com.br",
-    horarioTexto: "Seg a Sex — [HH:MM às HH:MM] · Sábado — [HH:MM às HH:MM]",
+    horarioTexto: "Seg a Sex — 08h00 às 19h00 · Sábado — 08h00 às 16h00",
     /* Horário usado no selo "ABERTO AGORA". 0 = domingo ... 6 = sábado.
        Enquanto horarioConfirmado for false, o selo NÃO aparece
        (evita dizer "aberto" com horário inventado). */
-    horarioConfirmado: false,
+    horarioConfirmado: true,
     horarios: {
-      1: ["07:30", "18:00"], 2: ["07:30", "18:00"], 3: ["07:30", "18:00"],
-      4: ["07:30", "18:00"], 5: ["07:30", "18:00"], 6: ["07:30", "12:00"]
+      1: ["08:00", "19:00"], 2: ["08:00", "19:00"], 3: ["08:00", "19:00"],
+      4: ["08:00", "19:00"], 5: ["08:00", "19:00"], 6: ["08:00", "16:00"]
     },
     instagram: "https://instagram.com/[PERFIL]",
     facebook: "https://facebook.com/[PAGINA]",
-    mapaEmbed: "https://www.google.com/maps?q=Av.+Eus%C3%A9bio+de+Queir%C3%B3z,+523,+Eus%C3%A9bio+-+CE&output=embed",
-    mapaRota: "https://www.google.com/maps/dir/?api=1&destination=Av.+Eus%C3%A9bio+de+Queir%C3%B3z,+523,+Eus%C3%A9bio+-+CE"
+    mapaEmbed: "https://www.google.com/maps?q=CE-040,+523,+Eus%C3%A9bio+-+CE&output=embed",
+    mapaRota: "https://www.google.com/maps/dir/?api=1&destination=CE-040,+523,+Eus%C3%A9bio+-+CE"
   },
 
   /* ---------- SEO POR PÁGINA ---------- */
@@ -121,9 +121,9 @@ window.BOMBEAR = {
     titulo: "Gente que entende de água",
     paragrafo: "A Bombear nasceu da Pé de Serra Irrigação, que há 3 anos dimensiona bombas e sistemas de irrigação no Ceará. No Eusébio, trouxemos o mesmo jeito de trabalhar: entender o problema antes de indicar o produto.",
     itens: [
-      { titulo: "Diagnóstico antes da venda", texto: "Altura, distância, vazão e uso. Você manda foto ou vídeo, a gente faz as contas." },
-      { titulo: "O projeto inteiro numa lista", texto: "Equipamento, tubos, conexões e elétrica juntos. Nada de voltar três vezes por um adaptador." },
-      { titulo: "Depois da venda, o mesmo WhatsApp", texto: "Manual da sua máquina, orientação de instalação e alguém para responder." }
+      { titulo: "Diagnóstico antes da venda", texto: "Antes de indicar a bomba, a gente entende altura, distância, vazão e uso." },
+      { titulo: "O projeto inteiro numa lista", texto: "Equipamento, tubos, conexões e parte elétrica no mesmo orçamento." },
+      { titulo: "Suporte depois da compra", texto: "Orientação na instalação, manual do seu equipamento e a mesma equipe para tirar dúvidas pelo WhatsApp." }
     ],
     processoTitulo: "Como a gente atende"
   },
@@ -144,10 +144,10 @@ window.BOMBEAR = {
   /* ---------- HOME: CTA DE CONTATO ---------- */
   ctaContato: {
     eyebrow: "Contato",
-    tituloAntes: "Bomba certa na",
-    tituloDestaque: "primeira",
-    tituloDepois: "compra.",
-    paragrafo: "Manda foto, vídeo ou a medida do poço. A gente faz as contas e responde no WhatsApp.",
+    tituloAntes: "A bomba do",
+    tituloDestaque: "tamanho certo",
+    tituloDepois: "para o seu caso.",
+    paragrafo: "Informe a profundidade do poço, a altura da caixa d'água ou o modelo da bomba atual. A gente indica o equipamento certo pelo WhatsApp.",
     botao: "Chamar no WhatsApp"
   },
 
