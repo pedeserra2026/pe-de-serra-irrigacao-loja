@@ -166,7 +166,7 @@ window.BOMBEAR = {
       { titulo: "Diagnóstico antes da venda", texto: "Perguntamos altura, vazão, distância e uso antes de indicar qualquer bomba." },
       { titulo: "O projeto inteiro em um só lugar", texto: "Do equipamento à última conexão, numa lista só." },
       { titulo: "Bombas funcionando no showroom", texto: "Você vê e ouve o equipamento antes de levar para casa." },
-      { titulo: "Raízes no Ceará", texto: "Nascemos da Pé de Serra Irrigação e conhecemos a água daqui: poço, cisterna e sol forte." }
+      { titulo: "Raízes no Ceará", texto: "Nascemos da Pé de Serra Irrigação." }
     ]
   },
 

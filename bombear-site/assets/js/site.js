@@ -289,7 +289,6 @@
             '<a class="btn btn--azul" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.chat + esc(h.ctaPrincipal) + ICONES.seta + "</a>" +
             '<a class="btn btn--contorno" href="#categorias">' + esc(h.ctaSecundario) + "</a>" +
           "</div>" +
-          '<div class="hero__selos"><span>' + ICONES.check + "Diagnóstico sem custo</span><span>" + ICONES.check + "Nota fiscal e garantia</span><span>" + ICONES.check + "Entrega na região</span></div>" +
         "</div>" +
         casaComFotos(h.palavras.map(function (p) { return p.foto; }), h.palavras.map(function (p) { return p.palavra; })) +
       "</div></section>" +
@@ -297,7 +296,7 @@
       /* CATEGORIAS */
       '<section class="secao" id="categorias" style="padding-top:0" aria-labelledby="cat-titulo"><div class="container">' +
         '<div class="cat-topo"><div><p class="rotulo">Produtos</p><h2 class="titulo-m" id="cat-titulo">O que tem na loja</h2></div>' +
-        '<p style="margin:0;max-width:40ch">Toque numa categoria para abrir. Cada uma leva direto ao WhatsApp com a pergunta pronta.</p></div>' +
+        "</div>" +
         '<div class="sanfona">' + paineis + "</div>" +
       "</div></section>" +
 
