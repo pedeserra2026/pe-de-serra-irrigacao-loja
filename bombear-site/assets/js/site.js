@@ -102,10 +102,13 @@
 
   /* ---------- aberto agora? (só com horário confirmado) ---------- */
   function estaAberto() {
-    var h = D.contato.horarios, agora = new Date();
-    var dia = h[agora.getDay()];
+    /* Sempre no horário da loja (Fortaleza), não no relógio de quem visita */
+    var h = D.contato.horarios, partes = {};
+    new Intl.DateTimeFormat("en-US", { timeZone: "America/Fortaleza", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+      .formatToParts(new Date()).forEach(function (p) { partes[p.type] = p.value; });
+    var dia = h[["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(partes.weekday)];
     if (!dia) return false;
-    var min = agora.getHours() * 60 + agora.getMinutes();
+    var min = (+partes.hour) * 60 + (+partes.minute);
     function m(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
     return min >= m(dia[0]) && min < m(dia[1]);
   }
