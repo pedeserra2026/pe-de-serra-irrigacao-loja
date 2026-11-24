@@ -237,7 +237,7 @@
       '<div class="container" style="position:relative">' +
         '<p class="rotulo">' + esc(k.eyebrow) + "</p>" +
         '<h2 class="titulo-g" id="contato-titulo">' + esc(k.tituloAntes) + " <em>" + esc(k.tituloDestaque) + "</em> " + esc(k.tituloDepois) + "</h2>" +
-        '<p class="lead">' + esc(k.paragrafo) + "</p>" +
+        (k.paragrafo ? '<p class="lead">' + esc(k.paragrafo) + "</p>" : "") +
         '<div class="contato__acoes"><a class="btn btn--whats" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.whats + esc(k.botao) + ICONES.seta + "</a></div>" +
         '<dl class="contato__info">' +
           "<div><dt>Endereço</dt><dd>" + esc(c.endereco) + "<br>" + esc(c.cidade) + " — " + esc(c.uf) + "</dd></div>" +

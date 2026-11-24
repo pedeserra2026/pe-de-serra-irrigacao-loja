@@ -143,7 +143,7 @@ window.BOMBEAR = {
       ] },
 
     { id: "piscina", nome: "Piscina", subtitulo: "Bomba, filtro e acessórios que funcionam juntos", rascunho: true,
-      foto: { src: null, alt: "Casa de máquinas de piscina com filtro e bomba" },
+      foto: { src: "assets/img/capa-piscina.webp", alt: "Piscina com cascata e casa de máquinas com bomba e filtro" },
       intro: "O que mantém a água da piscina limpa e em circulação, e onde cada item entra no sistema.",
       tipos: [
         { nome: "Bomba de piscina", descricao: "Faz a água circular pelo filtro e voltar limpa para a piscina.", aplicacoes: ["Piscinas residenciais", "Condomínios e clubes"], foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina" } },
@@ -152,7 +152,7 @@ window.BOMBEAR = {
       ] },
 
     { id: "irrigacao", nome: "Irrigação", subtitulo: "Projeto e instalação, do gramado ao pomar", rascunho: true,
-      foto: { src: null, alt: "Aspersor irrigando gramado" },
+      foto: { src: "assets/img/capa-irrigacao.webp", alt: "Aspersores irrigando plantação" },
       intro: "Cada cultura e cada área pedem uma forma de levar água. Veja os sistemas mais usados.",
       tipos: [
         { nome: "Aspersão", descricao: "Distribui a água em forma de chuva sobre a área.", aplicacoes: ["Gramados", "Jardins", "Pastagens"], foto: { src: null, alt: "Aspersor em funcionamento" } },
@@ -162,7 +162,7 @@ window.BOMBEAR = {
       ] },
 
     { id: "jardinagem", nome: "Jardinagem", subtitulo: "Para quem cuida do verde todo dia", rascunho: true,
-      foto: { src: null, alt: "Ferramentas de jardinagem" },
+      foto: { src: "assets/img/capa-jardinagem.webp", alt: "Jardim com aspersor, regador, enrolador de mangueira e ferramentas" },
       intro: "Itens do dia a dia de quem cuida de jardim, horta e gramado.",
       tipos: [
         { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: null, alt: "Mangueira de jardim" } },
@@ -171,7 +171,7 @@ window.BOMBEAR = {
       ] },
 
     { id: "tubos", nome: "Tubos e conexões", subtitulo: "Pronta entrega para a obra não parar", rascunho: true,
-      foto: { src: null, alt: "Tubos e conexões organizados em prateleira" },
+      foto: { src: "assets/img/capa-tubos.webp", alt: "Tubos de PVC, conexões e registros sobre bancada" },
       intro: "A tubulação certa evita perda de pressão e vazamento. Veja onde cada tipo se aplica.",
       tipos: [
         { nome: "PVC soldável", descricao: "Para água fria em instalações prediais e residenciais.", aplicacoes: ["Residências", "Caixas d'água", "Recalque"], foto: { src: null, alt: "Tubo de PVC soldável" } },
@@ -181,7 +181,7 @@ window.BOMBEAR = {
       ] },
 
     { id: "eletricos", nome: "Elétricos", subtitulo: "Tudo o que a bomba precisa para ligar com segurança", rascunho: true,
-      foto: { src: null, alt: "Quadro de comando de bomba" },
+      foto: { src: "assets/img/capa-eletricos.webp", alt: "Eletrodutos, caixas de passagem e quadro elétrico" },
       intro: "A parte elétrica certa protege a bomba e evita queima do motor.",
       tipos: [
         { nome: "Quadro de comando", descricao: "Liga, desliga e protege o motor da bomba.", aplicacoes: ["Bombas de poço", "Recalque predial", "Irrigação"], foto: { src: null, alt: "Quadro de comando" } },
@@ -248,7 +248,7 @@ window.BOMBEAR = {
     tituloAntes: "A bomba do",
     tituloDestaque: "tamanho certo",
     tituloDepois: "para o seu caso.",
-    paragrafo: "Informe a profundidade do poço, a altura da caixa d'água ou o modelo da bomba atual. A gente indica o equipamento certo pelo WhatsApp.",
+    paragrafo: "",
     botao: "Chamar no WhatsApp"
   },
 
