@@ -96,7 +96,7 @@ window.BOMBEAR = {
     linha1: "A bomba certa para",
     palavras: [
       { palavra: "Irrigação", foto: { src: "assets/img/hero-irrigacao.webp", alt: "Gramado de sítio irrigado por aspersores ao pôr do sol, com cavalo no pasto ao fundo" } },
-      { palavra: "Indústria", foto: { src: null, alt: "Bomba centrífuga instalada em casa de máquinas" } },
+      { palavra: "Indústria", foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga instalada em casa de máquinas, com quadro de comando e tubulação" } },
       { palavra: "Lazer",     foto: { src: "assets/img/hero-lazer.webp", alt: "Piscina com cascata e hidromassagem em casa de alto padrão" } }
     ],
     paragrafo: "Bombas, irrigação, piscina e jardinagem em um só lugar. A gente entende o problema antes de indicar o produto e continua atendendo depois da compra.",
@@ -112,7 +112,7 @@ window.BOMBEAR = {
     { id: "jardinagem", nome: "Jardinagem",       subtitulo: "Para quem cuida do verde todo dia", foto: { src: null, alt: "Ferramentas de jardinagem" } },
     { id: "tubos",      nome: "Tubos e conexões", subtitulo: "Pronta entrega para a obra não parar", foto: { src: null, alt: "Tubos e conexões organizados em prateleira" } },
     { id: "eletricos",  nome: "Elétricos",        subtitulo: "Tudo o que a bomba precisa para ligar com segurança", foto: { src: null, alt: "Quadro de comando de bomba" } },
-    { id: "industria",  nome: "Indústria",        subtitulo: "Centrífugas, motores e peças para não parar a produção", foto: { src: null, alt: "Bomba centrífuga industrial" } }
+    { id: "industria",  nome: "Indústria",        subtitulo: "Centrífugas, motores e peças para não parar a produção", foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial instalada em casa de máquinas" } }
   ],
 
   /* ---------- HOME: QUEM SOMOS (resumo) ---------- */
