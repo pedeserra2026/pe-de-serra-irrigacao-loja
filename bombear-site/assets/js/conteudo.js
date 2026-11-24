@@ -52,7 +52,7 @@ window.BOMBEAR = {
 
   /* ---------- CONTATO ---------- */
   contato: {
-    endereco: "CE-040, 523",
+    endereco: "CE-040, 390",
     cidade: "Eusébio",
     uf: "CE",
     cep: "[CEP]",
@@ -71,8 +71,8 @@ window.BOMBEAR = {
     },
     instagram: "https://instagram.com/[PERFIL]",
     facebook: "https://facebook.com/[PAGINA]",
-    mapaEmbed: "https://www.google.com/maps?q=CE-040,+523,+Eus%C3%A9bio+-+CE&output=embed",
-    mapaRota: "https://www.google.com/maps/dir/?api=1&destination=CE-040,+523,+Eus%C3%A9bio+-+CE"
+    mapaEmbed: "https://www.google.com/maps?q=CE-040,+390,+Eus%C3%A9bio+-+CE&output=embed",
+    mapaRota: "https://www.google.com/maps/dir/?api=1&destination=CE-040,+390,+Eus%C3%A9bio+-+CE"
   },
 
   /* ---------- SEO POR PÁGINA ---------- */
