@@ -38,7 +38,7 @@ window.BOMBEAR = {
   /* ---------- EMPRESA ---------- */
   empresa: {
     nome: "Bombear",
-    nomeCompleto: "Bombear Soluções",
+    nomeCompleto: "Bombear",
     razaoSocial: "Bombear Ltda",
     cnpj: "69.490.094/0001-20",
     slogan: "Irrigação – Indústria – Lazer",
@@ -212,7 +212,7 @@ window.BOMBEAR = {
       "Disponibilidade de energia elétrica",
       "Condições de instalação e operação"
     ],
-    fechamento: "Conte com o suporte técnico da Bombear Soluções para encontrar o equipamento adequado à sua necessidade.",
+    fechamento: "Conte com o suporte técnico da Bombear para encontrar o equipamento adequado à sua necessidade.",
     botao: "Fale com um especialista"
   },
 
@@ -292,6 +292,6 @@ window.BOMBEAR = {
 
   /* ---------- RODAPÉ ---------- */
   rodape: {
-    copyright: "© 2026 Bombear Soluções — Irrigação, Indústria e Lazer."
+    copyright: "© 2026 Bombear — Irrigação, Indústria e Lazer."
   }
 };
