@@ -125,9 +125,9 @@
     var itens = D.menu.map(function (m, i) {
       if (m.dropdown) {
         var sub = D.categorias.map(function (c) {
-          return '<li><a href="index.html#cat-' + esc(c.id) + '">' + esc(c.nome) + "</a></li>";
+          return '<li><a href="produtos.html#' + esc(c.id) + '">' + esc(c.nome) + "</a></li>";
         }).join("");
-        return '<li class="nav__item" data-dropdown><button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-' + i + '">' +
+        return '<li class="nav__item" data-dropdown><button class="nav__link" type="button" aria-expanded="false" aria-controls="dd-' + i + '"' + (m.pagina === pagina ? ' aria-current="page"' : '') + '>' +
           esc(m.rotulo) + ICONES.chevron + '</button><ul class="dropdown" id="dd-' + i + '">' + sub + "</ul></li>";
       }
       var atual = m.pagina === pagina ? ' aria-current="page"' : "";
@@ -136,7 +136,7 @@
 
     var mobile = D.menu.map(function (m) {
       var sub = m.dropdown ? '<div class="sub">' + D.categorias.map(function (c) {
-        return '<a href="index.html#cat-' + esc(c.id) + '">' + esc(c.nome) + "</a>";
+        return '<a href="produtos.html#' + esc(c.id) + '">' + esc(c.nome) + "</a>";
       }).join("") + "</div>" : "";
       return '<li><a class="grande" href="' + esc(m.href) + '">' + esc(m.rotulo) + "</a>" + sub + "</li>";
     }).join("");
@@ -264,7 +264,7 @@
           '<span class="painel__num">' + pad(i + 1) + " / " + pad(D.categorias.length) + "</span>" +
           '<h3 class="painel__titulo">' + esc(cat.nome) + "</h3>" +
           '<p class="painel__sub">' + esc(cat.subtitulo) + "</p>" +
-          '<a class="btn btn--claro" href="' + linkWhats(cat.nome.toLowerCase() + ".") + '" target="_blank" rel="noopener"' + (i === 0 ? "" : ' tabindex="-1"') + ">Ver produtos " + ICONES.diag + "</a>" +
+          '<a class="btn btn--claro" href="produtos.html#' + esc(cat.id) + '"' + (i === 0 ? "" : ' tabindex="-1"') + ">Ver produtos " + ICONES.seta + "</a>" +
         "</div>" +
       "</div>";
     }).join("");
@@ -415,6 +415,60 @@
       "</div></section>";
   }
 
+  /* ---------- PRODUTOS: tipos de cada categoria (produtos.html#id) ---------- */
+  function categoriaPelaHash() {
+    var id = (location.hash || "").replace("#", "");
+    return D.categorias.filter(function (c) { return c.id === id; })[0] || D.categorias[0];
+  }
+  function renderProdutos() {
+    var a = D.ajudaEscolha;
+    var abas = D.categorias.map(function (c) {
+      return '<li><a class="cat-link" href="#' + esc(c.id) + '" data-id="' + esc(c.id) + '">' + esc(c.nome) + "</a></li>";
+    }).join("");
+    var fatores = a.fatores.map(function (f) { return "<li>" + ICONES.check + "<span>" + esc(f) + "</span></li>"; }).join("");
+    $("#conteudo").innerHTML =
+      '<section class="topo-pagina" style="padding-bottom:0"><div class="container">' +
+        '<p class="rotulo">Produtos</p>' +
+        '<h1 class="titulo-g" id="prod-titulo"></h1>' +
+        '<p class="lead" id="prod-intro" style="margin-top:20px;max-width:56ch"></p>' +
+        '<nav class="cat-nav" aria-label="Categorias"><ul>' + abas + "</ul></nav>" +
+      "</div></section>" +
+      '<section class="secao" style="padding-top:clamp(32px,4vw,48px)"><div class="container">' +
+        '<h2 class="sr-only" id="prod-lista-titulo"></h2>' +
+        '<ul class="tipos" id="prod-tipos"></ul>' +
+        '<div class="ajuda">' +
+          '<div class="ajuda__texto"><p class="rotulo">Suporte técnico</p><h2 class="titulo-m">' + esc(a.titulo) + "</h2>" +
+          '<p style="margin:20px 0 0">' + esc(a.texto) + "</p></div>" +
+          '<ul class="ajuda__fatores">' + fatores + "</ul>" +
+          '<div class="ajuda__rodape"><p>' + esc(a.fechamento) + "</p>" +
+          '<a class="btn btn--azul" id="prod-cta" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.chat + esc(a.botao) + ICONES.seta + "</a></div>" +
+        "</div>" +
+      "</div></section>";
+  }
+  function mostrarCategoria(rolar) {
+    var c = categoriaPelaHash();
+    $("#prod-titulo").textContent = c.nome;
+    $("#prod-intro").textContent = c.intro || c.subtitulo;
+    $("#prod-lista-titulo").textContent = "Tipos de " + c.nome.toLowerCase();
+    $$(".cat-link").forEach(function (l) {
+      l.setAttribute("aria-current", l.getAttribute("data-id") === c.id ? "page" : "false");
+    });
+    $("#prod-tipos").innerHTML = (c.tipos || []).map(function (t) {
+      var apl = (t.aplicacoes || []).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
+      return '<li class="tipo"><div class="tipo__foto">' + foto(t.foto) + "</div>" +
+        '<div class="tipo__corpo"><h3 class="titulo-p">' + esc(t.nome) + "</h3><p>" + esc(t.descricao) + "</p>" +
+        (apl ? '<p class="tipo__rotulo">Aplicações</p><ul class="tipo__apl">' + apl + "</ul>" : "") +
+        "</div></li>";
+    }).join("");
+    $("#prod-cta").href = linkWhats(c.nome.toLowerCase() + ".");
+    document.title = c.nome + " · " + D.seo.produtos.titulo;
+    if (rolar) window.scrollTo({ top: 0, behavior: "auto" });
+  }
+  function ligarProdutos() {
+    mostrarCategoria(false);
+    window.addEventListener("hashchange", function () { mostrarCategoria(true); });
+  }
+
   /* ---------- início ---------- */
   aplicarTema();
   aplicarSEO();
@@ -422,8 +476,10 @@
   if (pagina === "inicio") renderHome();
   if (pagina === "quemSomos") renderQuemSomos();
   if (pagina === "condominios") renderCondominios();
+  if (pagina === "produtos") renderProdutos();
   renderRodape();
   ligarHeader();
   ligarHero();
   if (pagina === "inicio") ligarCategorias();
+  if (pagina === "produtos") ligarProdutos();
 })();

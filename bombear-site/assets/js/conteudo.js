@@ -79,13 +79,14 @@ window.BOMBEAR = {
   seo: {
     inicio:      { titulo: "Bombear · Bombas, irrigação e piscina no Eusébio-CE", descricao: "Loja de bombas, irrigação, piscina e jardinagem no Eusébio-CE. Diagnóstico antes da venda e atendimento pelo WhatsApp." },
     quemSomos:   { titulo: "Quem somos · Bombear", descricao: "A Bombear nasceu da Pé de Serra Irrigação. Conheça nosso jeito de atender no Eusébio-CE." },
+    produtos:    { titulo: "Produtos · Bombear", descricao: "Tipos de bomba, irrigação, piscina, tubos e elétricos: o que cada um faz e onde se aplica. Bombear, Eusébio-CE." },
     condominios: { titulo: "Condomínios · Bombear", descricao: "Bombas de recalque, piscina, irrigação e elétrica de bombas para condomínios do Eusébio e região, com nota fiscal e cotação rápida." },
     imagemCompartilhamento: "assets/img/[og-imagem].jpg"
   },
 
   /* ---------- MENU ---------- */
   menu: [
-    { rotulo: "Produtos", href: "index.html#categorias", dropdown: true },
+    { rotulo: "Produtos", href: "produtos.html", pagina: "produtos", dropdown: true },
     { rotulo: "Quem Somos", href: "quem-somos.html", pagina: "quemSomos" },
     { rotulo: "Marcas", href: "index.html#marcas" },
     { rotulo: "Contato", href: "index.html#contato" }
@@ -105,15 +106,117 @@ window.BOMBEAR = {
   },
 
   /* ---------- HOME: CATEGORIAS ---------- */
+  /* Cada categoria tem um cartão na página inicial e uma página de detalhe
+     (produtos.html#id) com os TIPOS de produto e onde cada um se aplica.
+     Sem marcas: o objetivo é ajudar o cliente a entender o que precisa.
+     ATENÇÃO: só "Bombas" veio pronto da equipe. As demais categorias estão
+     marcadas como RASCUNHO — conferir com o Lucas o que a loja tem de fato. */
   categorias: [
-    { id: "bombas",     nome: "Bombas",           subtitulo: "Do pressurizador da casa à submersa do poço", foto: { src: null, alt: "Bombas expostas no showroom da Bombear" } },
-    { id: "piscina",    nome: "Piscina",          subtitulo: "Bomba, filtro e acessórios que funcionam juntos", foto: { src: null, alt: "Casa de máquinas de piscina com filtro e bomba" } },
-    { id: "irrigacao",  nome: "Irrigação",        subtitulo: "Projeto e instalação, do gramado ao pomar", foto: { src: null, alt: "Aspersor irrigando gramado" } },
-    { id: "jardinagem", nome: "Jardinagem",       subtitulo: "Para quem cuida do verde todo dia", foto: { src: null, alt: "Ferramentas de jardinagem" } },
-    { id: "tubos",      nome: "Tubos e conexões", subtitulo: "Pronta entrega para a obra não parar", foto: { src: null, alt: "Tubos e conexões organizados em prateleira" } },
-    { id: "eletricos",  nome: "Elétricos",        subtitulo: "Tudo o que a bomba precisa para ligar com segurança", foto: { src: null, alt: "Quadro de comando de bomba" } },
-    { id: "industria",  nome: "Indústria",        subtitulo: "Centrífugas, motores e peças para não parar a produção", foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial instalada em casa de máquinas" } }
+    { id: "bombas", nome: "Bombas", subtitulo: "Do pressurizador da casa à submersa do poço",
+      foto: { src: null, alt: "Bombas expostas no showroom da Bombear" },
+      intro: "Conheça os principais tipos de bomba, suas características e onde cada uma é mais indicada.",
+      tipos: [
+        { nome: "Bomba centrífuga", descricao: "Versátil e de alta vazão, ideal para transferência de água limpa.",
+          aplicacoes: ["Abastecimento residencial", "Uso industrial", "Irrigação de grandes áreas"],
+          foto: { src: "assets/img/tipos/centrifuga.webp", alt: "Bomba centrífuga" } },
+        { nome: "Bomba autoescorvante", descricao: "Indicada para captação de água em locais onde a bomba fica acima do nível da água.",
+          aplicacoes: ["Poços rasos", "Cisternas e caixas d'água", "Irrigação e uso geral"],
+          foto: { src: "assets/img/tipos/autoescorvante.webp", alt: "Bomba autoescorvante" } },
+        { nome: "Bomba periférica", descricao: "Compacta, com alta pressão, ideal para pequenas demandas e pressurização.",
+          aplicacoes: ["Pressurização de chuveiros", "Residências e comércios", "Sistemas de baixa vazão"],
+          foto: { src: "assets/img/tipos/periferica.webp", alt: "Bomba periférica" } },
+        { nome: "Bomba submersível", descricao: "Instalada dentro da água, ideal para poços, cisternas e captação em maiores profundidades.",
+          aplicacoes: ["Poços artesianos", "Irrigação", "Abastecimento de reservatórios"],
+          foto: { src: "assets/img/tipos/submersivel.webp", alt: "Bomba submersível para poço" } },
+        { nome: "Bomba submersa para esgoto (SDS)", descricao: "Desenvolvida para bombeamento de água com sólidos, esgoto e drenagem.",
+          aplicacoes: ["Drenagem de áreas alagadas", "Esgoto residencial, comercial e industrial", "Caixas de inspeção e estações elevatórias"],
+          foto: { src: "assets/img/tipos/esgoto.webp", alt: "Bomba submersa para esgoto com boia" } },
+        { nome: "Bomba de piscina", descricao: "Especial para circulação, filtragem e tratamento da água da piscina.",
+          aplicacoes: ["Piscinas residenciais", "Piscinas de condomínios e clubes", "Sistemas de filtração e aquecimento"],
+          foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina com pré-filtro" } },
+        { nome: "Pressurizador", descricao: "Mantém a pressão da água constante, proporcionando mais conforto no uso de chuveiros e torneiras.",
+          aplicacoes: ["Pressão constante em chuveiros", "Residências e edifícios", "Comércios e pequenas indústrias"],
+          foto: { src: "assets/img/tipos/pressurizador.webp", alt: "Pressurizador ao lado de chuveiro" } },
+        { nome: "Bomba solar", descricao: "Solução eficiente e econômica, movida por energia solar, ideal para locais sem rede elétrica.",
+          aplicacoes: ["Irrigação rural", "Abastecimento de reservatórios", "Projetos sustentáveis e autônomos"],
+          foto: { src: "assets/img/tipos/solar.webp", alt: "Bomba solar com painéis fotovoltaicos" } }
+      ] },
+
+    { id: "piscina", nome: "Piscina", subtitulo: "Bomba, filtro e acessórios que funcionam juntos", rascunho: true,
+      foto: { src: null, alt: "Casa de máquinas de piscina com filtro e bomba" },
+      intro: "O que mantém a água da piscina limpa e em circulação, e onde cada item entra no sistema.",
+      tipos: [
+        { nome: "Bomba de piscina", descricao: "Faz a água circular pelo filtro e voltar limpa para a piscina.", aplicacoes: ["Piscinas residenciais", "Condomínios e clubes"], foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina" } },
+        { nome: "Filtro", descricao: "Retém a sujeira da água em circulação. O tamanho acompanha o volume da piscina.", aplicacoes: ["Filtragem diária", "Manutenção da água"], foto: { src: null, alt: "Filtro de piscina" } },
+        { nome: "Aquecimento", descricao: "Mantém a água em temperatura agradável fora do verão.", aplicacoes: ["Piscinas residenciais", "Spas e hidromassagens"], foto: { src: null, alt: "Sistema de aquecimento de piscina" } },
+        { nome: "Dispositivos e acessórios", descricao: "Retorno, aspiração, ralo de fundo e itens de limpeza.", aplicacoes: ["Instalação", "Limpeza e manutenção"], foto: { src: null, alt: "Acessórios de piscina" } }
+      ] },
+
+    { id: "irrigacao", nome: "Irrigação", subtitulo: "Projeto e instalação, do gramado ao pomar", rascunho: true,
+      foto: { src: null, alt: "Aspersor irrigando gramado" },
+      intro: "Cada cultura e cada área pedem uma forma de levar água. Veja os sistemas mais usados.",
+      tipos: [
+        { nome: "Aspersão", descricao: "Distribui a água em forma de chuva sobre a área.", aplicacoes: ["Gramados", "Jardins", "Pastagens"], foto: { src: null, alt: "Aspersor em funcionamento" } },
+        { nome: "Gotejamento", descricao: "Leva a água gota a gota direto na raiz, com pouco desperdício.", aplicacoes: ["Hortas", "Pomares", "Vasos e canteiros"], foto: { src: null, alt: "Mangueira de gotejamento" } },
+        { nome: "Microaspersão", descricao: "Jato fino e localizado, entre a aspersão e o gotejamento.", aplicacoes: ["Frutíferas", "Viveiros", "Canteiros"], foto: { src: null, alt: "Microaspersor" } },
+        { nome: "Automação", descricao: "Controladores e válvulas que ligam a irrigação no horário certo.", aplicacoes: ["Jardins de condomínio", "Residências", "Áreas grandes"], foto: { src: null, alt: "Controlador de irrigação" } }
+      ] },
+
+    { id: "jardinagem", nome: "Jardinagem", subtitulo: "Para quem cuida do verde todo dia", rascunho: true,
+      foto: { src: null, alt: "Ferramentas de jardinagem" },
+      intro: "Itens do dia a dia de quem cuida de jardim, horta e gramado.",
+      tipos: [
+        { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: null, alt: "Mangueira de jardim" } },
+        { nome: "Ferramentas manuais", descricao: "Para plantio, poda e manutenção do jardim.", aplicacoes: ["Plantio", "Poda", "Manutenção"], foto: { src: null, alt: "Ferramentas de jardinagem" } },
+        { nome: "Pulverizadores", descricao: "Para aplicar adubos foliares e defensivos.", aplicacoes: ["Hortas", "Jardins", "Pomares"], foto: { src: null, alt: "Pulverizador costal" } }
+      ] },
+
+    { id: "tubos", nome: "Tubos e conexões", subtitulo: "Pronta entrega para a obra não parar", rascunho: true,
+      foto: { src: null, alt: "Tubos e conexões organizados em prateleira" },
+      intro: "A tubulação certa evita perda de pressão e vazamento. Veja onde cada tipo se aplica.",
+      tipos: [
+        { nome: "PVC soldável", descricao: "Para água fria em instalações prediais e residenciais.", aplicacoes: ["Residências", "Caixas d'água", "Recalque"], foto: { src: null, alt: "Tubo de PVC soldável" } },
+        { nome: "PVC roscável", descricao: "Para ligações que precisam ser desmontadas na manutenção.", aplicacoes: ["Ligação de bombas", "Cavaletes", "Manutenção"], foto: { src: null, alt: "Conexões roscáveis" } },
+        { nome: "PEAD", descricao: "Tubo flexível e resistente, usado em adutoras e irrigação.", aplicacoes: ["Irrigação", "Poços", "Adutoras rurais"], foto: { src: null, alt: "Bobina de tubo PEAD" } },
+        { nome: "Registros e válvulas", descricao: "Controlam, bloqueiam ou impedem o retorno da água.", aplicacoes: ["Bombas", "Reservatórios", "Redes prediais"], foto: { src: null, alt: "Registros e válvulas" } }
+      ] },
+
+    { id: "eletricos", nome: "Elétricos", subtitulo: "Tudo o que a bomba precisa para ligar com segurança", rascunho: true,
+      foto: { src: null, alt: "Quadro de comando de bomba" },
+      intro: "A parte elétrica certa protege a bomba e evita queima do motor.",
+      tipos: [
+        { nome: "Quadro de comando", descricao: "Liga, desliga e protege o motor da bomba.", aplicacoes: ["Bombas de poço", "Recalque predial", "Irrigação"], foto: { src: null, alt: "Quadro de comando" } },
+        { nome: "Boia elétrica", descricao: "Liga e desliga a bomba pelo nível da água do reservatório.", aplicacoes: ["Caixas d'água", "Cisternas"], foto: { src: null, alt: "Boia elétrica" } },
+        { nome: "Cabos para bomba", descricao: "Cabos próprios para bomba submersa, com a bitola certa para a distância.", aplicacoes: ["Poços artesianos", "Submersíveis"], foto: { src: null, alt: "Cabo para bomba submersa" } },
+        { nome: "Pressostatos e protetores", descricao: "Controlam a pressão e protegem contra falta de fase e funcionamento a seco.", aplicacoes: ["Pressurização", "Proteção do motor"], foto: { src: null, alt: "Pressostato" } }
+      ] },
+
+    { id: "industria", nome: "Indústria", subtitulo: "Centrífugas, motores e peças para não parar a produção", rascunho: true,
+      foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial instalada em casa de máquinas" },
+      intro: "Equipamentos e reposição para manutenção industrial, com foco em reduzir o tempo de máquina parada.",
+      tipos: [
+        { nome: "Bombas centrífugas industriais", descricao: "Para transferência contínua de água em processos e utilidades.", aplicacoes: ["Processos", "Torres de resfriamento", "Utilidades"], foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial" } },
+        { nome: "Motores elétricos", descricao: "Motores para bombas e máquinas, na potência e na rotação certas.", aplicacoes: ["Reposição", "Novos equipamentos"], foto: { src: null, alt: "Motor elétrico" } },
+        { nome: "Inversores de frequência", descricao: "Ajustam a rotação do motor e reduzem o consumo de energia.", aplicacoes: ["Economia de energia", "Controle de vazão"], foto: { src: null, alt: "Inversor de frequência" } },
+        { nome: "Peças de reposição", descricao: "Selos mecânicos, rotores e rolamentos para manter a bomba em operação.", aplicacoes: ["Manutenção preventiva", "Manutenção corretiva"], foto: { src: null, alt: "Peças de reposição de bomba" } }
+      ] }
   ],
+
+  /* Bloco fixo exibido depois da lista de tipos, em todas as categorias */
+  ajudaEscolha: {
+    titulo: "Não sabe qual bomba escolher?",
+    texto: "Cada aplicação exige uma solução específica. A escolha correta de uma bomba depende de fatores como:",
+    fatores: [
+      "Vazão necessária",
+      "Altura manométrica total",
+      "Distância e diâmetro da tubulação",
+      "Características do líquido bombeado",
+      "Disponibilidade de energia elétrica",
+      "Condições de instalação e operação"
+    ],
+    fechamento: "Conte com o suporte técnico da Bombear Soluções para encontrar o equipamento adequado à sua necessidade.",
+    botao: "Fale com um especialista"
+  },
 
   /* ---------- HOME: QUEM SOMOS (resumo) ---------- */
   quemSomosResumo: {
