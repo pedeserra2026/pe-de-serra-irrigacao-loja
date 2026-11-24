@@ -132,7 +132,7 @@ window.BOMBEAR = {
           aplicacoes: ["Drenagem de áreas alagadas", "Esgoto residencial, comercial e industrial", "Caixas de inspeção e estações elevatórias"],
           foto: { src: "assets/img/tipos/esgoto.webp", alt: "Bomba submersa para esgoto com boia" } },
         { nome: "Bomba de piscina", descricao: "Especial para circulação, filtragem e tratamento da água da piscina.",
-          aplicacoes: ["Piscinas residenciais", "Piscinas de condomínios e clubes", "Sistemas de filtração e aquecimento"],
+          aplicacoes: ["Piscinas residenciais", "Piscinas de condomínios e clubes", "Sistemas de filtração"],
           foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina com pré-filtro" } },
         { nome: "Pressurizador", descricao: "Mantém a pressão da água constante, proporcionando mais conforto no uso de chuveiros e torneiras.",
           aplicacoes: ["Pressão constante em chuveiros", "Residências e edifícios", "Comércios e pequenas indústrias"],
@@ -148,8 +148,7 @@ window.BOMBEAR = {
       tipos: [
         { nome: "Bomba de piscina", descricao: "Faz a água circular pelo filtro e voltar limpa para a piscina.", aplicacoes: ["Piscinas residenciais", "Condomínios e clubes"], foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina" } },
         { nome: "Filtro", descricao: "Retém a sujeira da água em circulação. O tamanho acompanha o volume da piscina.", aplicacoes: ["Filtragem diária", "Manutenção da água"], foto: { src: null, alt: "Filtro de piscina" } },
-        { nome: "Aquecimento", descricao: "Mantém a água em temperatura agradável fora do verão.", aplicacoes: ["Piscinas residenciais", "Spas e hidromassagens"], foto: { src: null, alt: "Sistema de aquecimento de piscina" } },
-        { nome: "Dispositivos e acessórios", descricao: "Retorno, aspiração, ralo de fundo e itens de limpeza.", aplicacoes: ["Instalação", "Limpeza e manutenção"], foto: { src: null, alt: "Acessórios de piscina" } }
+        { nome: "Limpeza e tratamento", descricao: "Pastilhas de cloro, sulfato e mangueiras para manter a água limpa e tratada.", aplicacoes: ["Pastilhas de cloro", "Sulfato", "Mangueiras"], foto: { src: null, alt: "Pastilhas de cloro e produtos de limpeza de piscina" } }
       ] },
 
     { id: "irrigacao", nome: "Irrigação", subtitulo: "Projeto e instalação, do gramado ao pomar", rascunho: true,
@@ -177,7 +176,7 @@ window.BOMBEAR = {
       tipos: [
         { nome: "PVC soldável", descricao: "Para água fria em instalações prediais e residenciais.", aplicacoes: ["Residências", "Caixas d'água", "Recalque"], foto: { src: null, alt: "Tubo de PVC soldável" } },
         { nome: "PVC roscável", descricao: "Para ligações que precisam ser desmontadas na manutenção.", aplicacoes: ["Ligação de bombas", "Cavaletes", "Manutenção"], foto: { src: null, alt: "Conexões roscáveis" } },
-        { nome: "PEAD", descricao: "Tubo flexível e resistente, usado em adutoras e irrigação.", aplicacoes: ["Irrigação", "Poços", "Adutoras rurais"], foto: { src: null, alt: "Bobina de tubo PEAD" } },
+        { nome: "PEBD", descricao: "Tubo flexível de polietileno de baixa densidade, leve e fácil de instalar.", aplicacoes: ["Irrigação", "Linhas de gotejamento", "Ligações rurais"], foto: { src: null, alt: "Bobina de tubo PEBD" } },
         { nome: "Registros e válvulas", descricao: "Controlam, bloqueiam ou impedem o retorno da água.", aplicacoes: ["Bombas", "Reservatórios", "Redes prediais"], foto: { src: null, alt: "Registros e válvulas" } }
       ] },
 
@@ -191,13 +190,12 @@ window.BOMBEAR = {
         { nome: "Pressostatos e protetores", descricao: "Controlam a pressão e protegem contra falta de fase e funcionamento a seco.", aplicacoes: ["Pressurização", "Proteção do motor"], foto: { src: null, alt: "Pressostato" } }
       ] },
 
-    { id: "industria", nome: "Indústria", subtitulo: "Centrífugas, motores e peças para não parar a produção", rascunho: true,
+    { id: "industria", nome: "Indústria", subtitulo: "Centrífugas, peças e energia solar para não parar a produção", rascunho: true,
       foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial instalada em casa de máquinas" },
       intro: "Equipamentos e reposição para manutenção industrial, com foco em reduzir o tempo de máquina parada.",
       tipos: [
         { nome: "Bombas centrífugas industriais", descricao: "Para transferência contínua de água em processos e utilidades.", aplicacoes: ["Processos", "Torres de resfriamento", "Utilidades"], foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial" } },
-        { nome: "Motores elétricos", descricao: "Motores para bombas e máquinas, na potência e na rotação certas.", aplicacoes: ["Reposição", "Novos equipamentos"], foto: { src: null, alt: "Motor elétrico" } },
-        { nome: "Inversores de frequência", descricao: "Ajustam a rotação do motor e reduzem o consumo de energia.", aplicacoes: ["Economia de energia", "Controle de vazão"], foto: { src: null, alt: "Inversor de frequência" } },
+        { nome: "Placas solares", descricao: "Painéis fotovoltaicos que alimentam bombas solares e reduzem o custo de energia.", aplicacoes: ["Bombas solares", "Locais sem rede elétrica", "Redução da conta de energia"], foto: { src: "assets/img/tipos/solar.webp", alt: "Placas solares em campo" } },
         { nome: "Peças de reposição", descricao: "Selos mecânicos, rotores e rolamentos para manter a bomba em operação.", aplicacoes: ["Manutenção preventiva", "Manutenção corretiva"], foto: { src: null, alt: "Peças de reposição de bomba" } }
       ] }
   ],
