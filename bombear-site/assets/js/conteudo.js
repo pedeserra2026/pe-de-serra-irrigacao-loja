@@ -113,7 +113,7 @@ window.BOMBEAR = {
      marcadas como RASCUNHO — conferir com o Lucas o que a loja tem de fato. */
   categorias: [
     { id: "bombas", nome: "Bombas", subtitulo: "Do pressurizador da casa à submersa do poço",
-      foto: { src: null, alt: "Bombas expostas no showroom da Bombear" },
+      foto: { src: "assets/img/capa-bombas.webp", alt: "Bomba submersa instalada em poço, com quadro de comando e tubulação" },
       intro: "Conheça os principais tipos de bomba, suas características e onde cada uma é mais indicada.",
       tipos: [
         { nome: "Bomba centrífuga", descricao: "Versátil e de alta vazão, ideal para transferência de água limpa.",
