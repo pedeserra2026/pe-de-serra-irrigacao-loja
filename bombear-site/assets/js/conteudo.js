@@ -139,7 +139,7 @@ window.BOMBEAR = {
           foto: { src: "assets/img/tipos/pressurizador.webp", alt: "Pressurizador ao lado de chuveiro" } },
         { nome: "Bomba solar", descricao: "Solução eficiente e econômica, movida por energia solar, ideal para locais sem rede elétrica.",
           aplicacoes: ["Irrigação rural", "Abastecimento de reservatórios", "Projetos sustentáveis e autônomos"],
-          foto: { src: "assets/img/tipos/solar.webp", alt: "Bomba solar com painéis fotovoltaicos" } }
+          foto: { src: "assets/img/tipos/bomba-solar.webp", alt: "Bomba solar com painéis fotovoltaicos e controlador" } }
       ] },
 
     { id: "piscina", nome: "Piscina", subtitulo: "Bomba, filtro e acessórios que funcionam juntos", rascunho: true,
