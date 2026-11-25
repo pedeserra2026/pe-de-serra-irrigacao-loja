@@ -327,3 +327,7 @@ button { font: inherit; color: inherit; }
 /* Foto de produto em estúdio (fundo branco): aparece inteira, sem corte */
 .foto--inteira { object-fit: contain; background: #F2F3F3; }
 .pilar__ilustra { filter: brightness(1.06) contrast(1.06); }
+
+/* Toda foto de produto ocupa exatamente o quadro 3:2, seja quadrada, vertical ou horizontal */
+.tipo__foto { position: relative; overflow: hidden; }
+.tipo__foto > img, .tipo__foto > .foto-vazia { position: absolute; inset: 0; width: 100%; height: 100%; }

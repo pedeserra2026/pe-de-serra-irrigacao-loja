@@ -166,7 +166,7 @@ window.BOMBEAR = {
       intro: "Itens do dia a dia de quem cuida de jardim, horta e gramado.",
       tipos: [
         { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: "assets/img/tipos/mangueiras-engate.webp", alt: "Mão encaixando engate rápido de mangueira na torneira do jardim" } },
-        { nome: "Ferramentas manuais", descricao: "Para plantio, poda e manutenção do jardim.", aplicacoes: ["Plantio", "Poda", "Manutenção"], foto: { src: null, alt: "Ferramentas de jardinagem" } },
+        { nome: "Ferramentas manuais", descricao: "Para plantio, poda e manutenção do jardim.", aplicacoes: ["Plantio", "Poda", "Manutenção"], foto: { src: "assets/img/tipos/ferramentas.webp", alt: "Pá, pá larga e ancinho de mão com cabo de madeira em vaso de terra" } },
         { nome: "Pulverizadores", descricao: "Para aplicar adubos foliares e defensivos.", aplicacoes: ["Hortas", "Jardins", "Pomares"], foto: { src: null, alt: "Pulverizador costal" } }
       ] },
 
