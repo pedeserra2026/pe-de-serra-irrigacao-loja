@@ -283,10 +283,10 @@ window.BOMBEAR = {
     ],
     /* Ilustrações dos 4 pilares, na mesma ordem dos pilares abaixo */
     iconesPilares: [
-      { src: "assets/img/icones/tubos.webp", alt: "" },
-      { src: "assets/img/icones/irrigacao.webp", alt: "" },
-      { src: "assets/img/icones/jardinagem.webp", alt: "" },
-      { src: "assets/img/icones/piscina.webp", alt: "" }
+      { src: "assets/img/icones/diagnostico.webp", alt: "" },
+      { src: "assets/img/icones/projeto.webp", alt: "" },
+      { src: "assets/img/icones/showroom.webp", alt: "" },
+      { src: "assets/img/icones/raizes.webp", alt: "" }
     ],
     pilares: [
       { titulo: "Diagnóstico antes da venda", texto: "Perguntamos altura, vazão, distância e uso antes de indicar qualquer bomba." },
