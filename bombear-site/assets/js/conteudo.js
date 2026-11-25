@@ -148,7 +148,7 @@ window.BOMBEAR = {
       tipos: [
         { nome: "Bomba de piscina", descricao: "Faz a água circular pelo filtro e voltar limpa para a piscina.", aplicacoes: ["Piscinas residenciais", "Condomínios e clubes"], foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina" } },
         { nome: "Filtro", descricao: "Retém a sujeira da água em circulação. O tamanho acompanha o volume da piscina.", aplicacoes: ["Filtragem diária", "Manutenção da água"], foto: { src: "assets/img/tipos/filtro.webp", encaixe: "inteira", alt: "Filtro de areia para piscina com válvula seletora e manômetro" } },
-        { nome: "Limpeza e tratamento", descricao: "Pastilhas de cloro, sulfato e mangueiras para manter a água limpa e tratada.", aplicacoes: ["Pastilhas de cloro", "Sulfato", "Mangueiras"], foto: { src: null, alt: "Pastilhas de cloro e produtos de limpeza de piscina" } }
+        { nome: "Limpeza e tratamento", descricao: "Pastilhas de cloro, sulfato e mangueiras para manter a água limpa e tratada.", aplicacoes: ["Pastilhas de cloro", "Sulfato", "Mangueiras"], foto: { src: "assets/img/tipos/limpeza.webp", alt: "Peneira, escovas, aspirador, clorador flutuante, mangueira e cesto para limpeza de piscina" } }
       ] },
 
     { id: "irrigacao", nome: "Irrigação", subtitulo: "Projeto e instalação, do gramado ao pomar", rascunho: true,
