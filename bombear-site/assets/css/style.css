@@ -321,3 +321,9 @@ button { font: inherit; color: inherit; }
   .historia__grade { grid-template-columns: minmax(0, 1fr); }
   .historia__imagem { position: static; max-width: 360px; width: 100%; }
 }
+
+/* Ilustrações dos pilares: o fundo branco da imagem some sobre o fundo da seção */
+.pilar__ilustra { display: block; width: 112px; height: auto; margin: 0 0 14px -8px; mix-blend-mode: multiply; }
+/* Foto de produto em estúdio (fundo branco): aparece inteira, sem corte */
+.foto--inteira { object-fit: contain; background: #F2F3F3; }
+.pilar__ilustra { filter: brightness(1.06) contrast(1.06); }

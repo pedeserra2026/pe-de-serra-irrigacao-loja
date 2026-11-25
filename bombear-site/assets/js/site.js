@@ -22,7 +22,7 @@
   function foto(f, eager) {
     f = f || {};
     if (f.src) {
-      return '<img class="foto" src="' + esc(f.src) + '" alt="' + esc(f.alt) + '"' + (eager ? "" : ' loading="lazy"') + ' decoding="async">';
+      return '<img class="foto' + (f.encaixe === 'inteira' ? ' foto--inteira' : '') + '" src="' + esc(f.src) + '" alt="' + esc(f.alt) + '"' + (eager ? "" : ' loading="lazy"') + ' decoding="async">';
     }
     return '<div class="foto-vazia" role="img" aria-label="' + esc(f.alt || "Foto") + '"><span>Foto aqui · ' + esc(f.alt || "") + "</span></div>";
   }
@@ -382,7 +382,11 @@
         (h.destaque ? '<p class="historia__destaque">' + esc(h.destaque) + "</p>" : "") +
         "</div></div></section>" : "";
     var pilares = p.pilares.map(function (it, i) {
-      return '<li class="pilar">' + (icones[i] || ICONES.gota) + '<h3 class="titulo-p">' + esc(it.titulo) + "</h3><p>" + esc(it.texto) + "</p></li>";
+      var ilustra = (p.iconesPilares || [])[i];
+      var icone = ilustra && ilustra.src
+        ? '<img class="pilar__ilustra" src="' + esc(ilustra.src) + '" alt="' + esc(ilustra.alt) + '" loading="lazy">'
+        : (icones[i] || ICONES.gota);
+      return '<li class="pilar">' + icone + '<h3 class="titulo-p">' + esc(it.titulo) + "</h3><p>" + esc(it.texto) + "</p></li>";
     }).join("");
     $("#conteudo").innerHTML =
       '<section class="topo-pagina"><div class="container">' +

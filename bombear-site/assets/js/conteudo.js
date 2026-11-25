@@ -147,7 +147,7 @@ window.BOMBEAR = {
       intro: "O que mantém a água da piscina limpa e em circulação, e onde cada item entra no sistema.",
       tipos: [
         { nome: "Bomba de piscina", descricao: "Faz a água circular pelo filtro e voltar limpa para a piscina.", aplicacoes: ["Piscinas residenciais", "Condomínios e clubes"], foto: { src: "assets/img/tipos/piscina.webp", alt: "Bomba de piscina" } },
-        { nome: "Filtro", descricao: "Retém a sujeira da água em circulação. O tamanho acompanha o volume da piscina.", aplicacoes: ["Filtragem diária", "Manutenção da água"], foto: { src: null, alt: "Filtro de piscina" } },
+        { nome: "Filtro", descricao: "Retém a sujeira da água em circulação. O tamanho acompanha o volume da piscina.", aplicacoes: ["Filtragem diária", "Manutenção da água"], foto: { src: "assets/img/tipos/filtro.webp", encaixe: "inteira", alt: "Filtro de areia para piscina com válvula seletora e manômetro" } },
         { nome: "Limpeza e tratamento", descricao: "Pastilhas de cloro, sulfato e mangueiras para manter a água limpa e tratada.", aplicacoes: ["Pastilhas de cloro", "Sulfato", "Mangueiras"], foto: { src: null, alt: "Pastilhas de cloro e produtos de limpeza de piscina" } }
       ] },
 
@@ -155,17 +155,17 @@ window.BOMBEAR = {
       foto: { src: "assets/img/capa-irrigacao.webp", alt: "Aspersores irrigando plantação" },
       intro: "Cada cultura e cada área pedem uma forma de levar água. Veja os sistemas mais usados.",
       tipos: [
-        { nome: "Aspersão", descricao: "Distribui a água em forma de chuva sobre a área.", aplicacoes: ["Gramados", "Jardins", "Pastagens"], foto: { src: null, alt: "Aspersor em funcionamento" } },
-        { nome: "Gotejamento", descricao: "Leva a água gota a gota direto na raiz, com pouco desperdício.", aplicacoes: ["Hortas", "Pomares", "Vasos e canteiros"], foto: { src: null, alt: "Mangueira de gotejamento" } },
+        { nome: "Aspersão", descricao: "Distribui a água em forma de chuva sobre a área.", aplicacoes: ["Gramados", "Jardins", "Pastagens"], foto: { src: "assets/img/tipos/aspersao.webp", encaixe: "inteira", alt: "Aspersor de impacto" } },
+        { nome: "Gotejamento", descricao: "Leva a água gota a gota direto na raiz, com pouco desperdício.", aplicacoes: ["Hortas", "Pomares", "Vasos e canteiros"], foto: { src: "assets/img/tipos/gotejamento.webp", encaixe: "inteira", alt: "Rolo de tubo com gotejadores, filtro, registro e conexões" } },
         { nome: "Microaspersão", descricao: "Jato fino e localizado, entre a aspersão e o gotejamento.", aplicacoes: ["Frutíferas", "Viveiros", "Canteiros"], foto: { src: null, alt: "Microaspersor" } },
-        { nome: "Automação", descricao: "Controladores e válvulas que ligam a irrigação no horário certo.", aplicacoes: ["Jardins de condomínio", "Residências", "Áreas grandes"], foto: { src: null, alt: "Controlador de irrigação" } }
+        { nome: "Automação", descricao: "Controladores e válvulas que ligam a irrigação no horário certo.", aplicacoes: ["Jardins de condomínio", "Residências", "Áreas grandes"], foto: { src: "assets/img/tipos/automacao.webp", encaixe: "inteira", alt: "Quadro de comando com display e botões" } }
       ] },
 
     { id: "jardinagem", nome: "Jardinagem", subtitulo: "Para quem cuida do verde todo dia", rascunho: true,
       foto: { src: "assets/img/capa-jardinagem.webp", alt: "Jardim com aspersor, regador, enrolador de mangueira e ferramentas" },
       intro: "Itens do dia a dia de quem cuida de jardim, horta e gramado.",
       tipos: [
-        { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: null, alt: "Mangueira de jardim" } },
+        { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: "assets/img/tipos/mangueiras.webp", encaixe: "inteira", alt: "Rolo de mangueira com engates, registro e microaspersores" } },
         { nome: "Ferramentas manuais", descricao: "Para plantio, poda e manutenção do jardim.", aplicacoes: ["Plantio", "Poda", "Manutenção"], foto: { src: null, alt: "Ferramentas de jardinagem" } },
         { nome: "Pulverizadores", descricao: "Para aplicar adubos foliares e defensivos.", aplicacoes: ["Hortas", "Jardins", "Pomares"], foto: { src: null, alt: "Pulverizador costal" } }
       ] },
@@ -280,6 +280,13 @@ window.BOMBEAR = {
       { src: null, alt: "Showroom com bombas funcionando" },
       { src: null, alt: "Equipe atendendo cliente no balcão" },
       { src: null, alt: "Prateleira de tubos e conexões" }
+    ],
+    /* Ilustrações dos 4 pilares, na mesma ordem dos pilares abaixo */
+    iconesPilares: [
+      { src: "assets/img/icones/tubos.webp", alt: "" },
+      { src: "assets/img/icones/irrigacao.webp", alt: "" },
+      { src: "assets/img/icones/jardinagem.webp", alt: "" },
+      { src: "assets/img/icones/piscina.webp", alt: "" }
     ],
     pilares: [
       { titulo: "Diagnóstico antes da venda", texto: "Perguntamos altura, vazão, distância e uso antes de indicar qualquer bomba." },
