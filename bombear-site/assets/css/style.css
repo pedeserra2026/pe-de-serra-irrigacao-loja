@@ -294,7 +294,7 @@ button { font: inherit; color: inherit; }
 .cat-link[aria-current="page"] { background: var(--marinho); border-color: var(--marinho); color: #fff; }
 .tipos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 16px; }
 .tipo { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio-g); overflow: hidden; display: flex; flex-direction: column; }
-.tipo__foto { aspect-ratio: 16 / 9; background: var(--fundo-suave); }
+.tipo__foto { aspect-ratio: 3 / 2; background: var(--fundo-suave); }
 .tipo__foto .foto-vazia { font-size: 12px; padding: 14px; }
 .tipo__corpo { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .tipo__corpo > p { margin: 0; font-size: 16px; }

@@ -22,7 +22,7 @@
   function foto(f, eager) {
     f = f || {};
     if (f.src) {
-      return '<img class="foto' + (f.encaixe === 'inteira' ? ' foto--inteira' : '') + '" src="' + esc(f.src) + '" alt="' + esc(f.alt) + '"' + (eager ? "" : ' loading="lazy"') + ' decoding="async">';
+      return '<img class="foto' + (f.encaixe === 'inteira' ? ' foto--inteira' : '') + '"' + (f.posicao ? ' style="object-position:' + esc(f.posicao) + '"' : '') + ' src="' + esc(f.src) + '" alt="' + esc(f.alt) + '"' + (eager ? "" : ' loading="lazy"') + ' decoding="async">';
     }
     return '<div class="foto-vazia" role="img" aria-label="' + esc(f.alt || "Foto") + '"><span>Foto aqui · ' + esc(f.alt || "") + "</span></div>";
   }

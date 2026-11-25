@@ -127,7 +127,7 @@ window.BOMBEAR = {
           foto: { src: "assets/img/tipos/periferica.webp", alt: "Bomba periférica" } },
         { nome: "Bomba submersível", descricao: "Instalada dentro da água, ideal para poços, cisternas e captação em maiores profundidades.",
           aplicacoes: ["Poços artesianos", "Irrigação", "Abastecimento de reservatórios"],
-          foto: { src: "assets/img/tipos/submersivel.webp", alt: "Bomba submersível para poço" } },
+          foto: { src: "assets/img/tipos/submersivel-poco.webp", alt: "Bomba submersível instalada dentro do poço, com detalhe do equipamento" } },
         { nome: "Bomba submersa para esgoto (SDS)", descricao: "Desenvolvida para bombeamento de água com sólidos, esgoto e drenagem.",
           aplicacoes: ["Drenagem de áreas alagadas", "Esgoto residencial, comercial e industrial", "Caixas de inspeção e estações elevatórias"],
           foto: { src: "assets/img/tipos/esgoto.webp", alt: "Bomba submersa para esgoto com boia" } },
