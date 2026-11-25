@@ -184,10 +184,10 @@ window.BOMBEAR = {
       foto: { src: "assets/img/capa-eletricos.webp", alt: "Eletrodutos, caixas de passagem e quadro elétrico" },
       intro: "A parte elétrica certa protege a bomba e evita queima do motor.",
       tipos: [
-        { nome: "Quadro de comando", descricao: "Liga, desliga e protege o motor da bomba.", aplicacoes: ["Bombas de poço", "Recalque predial", "Irrigação"], foto: { src: null, alt: "Quadro de comando" } },
-        { nome: "Boia elétrica", descricao: "Liga e desliga a bomba pelo nível da água do reservatório.", aplicacoes: ["Caixas d'água", "Cisternas"], foto: { src: null, alt: "Boia elétrica" } },
-        { nome: "Cabos para bomba", descricao: "Cabos próprios para bomba submersa, com a bitola certa para a distância.", aplicacoes: ["Poços artesianos", "Submersíveis"], foto: { src: null, alt: "Cabo para bomba submersa" } },
-        { nome: "Pressostatos e protetores", descricao: "Controlam a pressão e protegem contra falta de fase e funcionamento a seco.", aplicacoes: ["Pressurização", "Proteção do motor"], foto: { src: null, alt: "Pressostato" } }
+        { nome: "Quadro de comando", descricao: "Liga, desliga e protege o motor da bomba.", aplicacoes: ["Bombas de poço", "Recalque predial", "Irrigação"], foto: { src: "assets/img/tipos/quadro-comando.webp", encaixe: "inteira", alt: "Quadro de comando de bomba aberto, com disjuntor, contator e relé térmico" } },
+        { nome: "Boia elétrica", descricao: "Liga e desliga a bomba pelo nível da água do reservatório.", aplicacoes: ["Caixas d'água", "Cisternas"], foto: { src: "assets/img/tipos/boia.webp", posicao: "center 75%", alt: "Boia elétrica de nível ao lado do reservatório" } },
+        { nome: "Cabos para bomba", descricao: "Cabos próprios para bomba submersa, com a bitola certa para a distância.", aplicacoes: ["Poços artesianos", "Submersíveis"], foto: { src: "assets/img/tipos/cabos.webp", alt: "Rolo de cabo elétrico de três vias" } },
+        { nome: "Pressostatos e protetores", descricao: "Controlam a pressão e protegem contra falta de fase e funcionamento a seco.", aplicacoes: ["Pressurização", "Proteção do motor"], foto: { src: "assets/img/tipos/pressostato.webp", alt: "Pressostato com a tampa aberta" } }
       ] },
 
     { id: "industria", nome: "Indústria", subtitulo: "Centrífugas, peças e energia solar para não parar a produção", rascunho: true,
