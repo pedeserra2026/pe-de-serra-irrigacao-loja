@@ -156,7 +156,7 @@ window.BOMBEAR = {
       intro: "Cada cultura e cada área pedem uma forma de levar água. Veja os sistemas mais usados.",
       tipos: [
         { nome: "Aspersão", descricao: "Distribui a água em forma de chuva sobre a área.", aplicacoes: ["Gramados", "Jardins", "Pastagens"], foto: { src: "assets/img/tipos/aspersao.webp", encaixe: "inteira", alt: "Aspersor de impacto" } },
-        { nome: "Gotejamento", descricao: "Leva a água gota a gota direto na raiz, com pouco desperdício.", aplicacoes: ["Hortas", "Pomares", "Vasos e canteiros"], foto: { src: "assets/img/tipos/gotejamento.webp", encaixe: "inteira", alt: "Rolo de tubo com gotejadores, filtro, registro e conexões" } },
+        { nome: "Gotejamento", descricao: "Leva a água gota a gota direto na raiz, com pouco desperdício.", aplicacoes: ["Hortas", "Pomares", "Vasos e canteiros"], foto: { src: "assets/img/tipos/gotejamento-campo.webp", alt: "Tubo de gotejamento soltando gota ao lado da planta" } },
         { nome: "Microaspersão", descricao: "Jato fino e localizado, entre a aspersão e o gotejamento.", aplicacoes: ["Frutíferas", "Viveiros", "Canteiros"], foto: { src: "assets/img/tipos/microaspersao.webp", alt: "Microaspersor em haste irrigando gramado" } },
         { nome: "Automação", descricao: "Controladores e válvulas que ligam a irrigação no horário certo.", aplicacoes: ["Jardins de condomínio", "Residências", "Áreas grandes"], foto: { src: "assets/img/tipos/automacao.webp", encaixe: "inteira", alt: "Quadro de comando com display e botões" } }
       ] },
