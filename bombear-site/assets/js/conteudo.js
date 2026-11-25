@@ -56,7 +56,7 @@ window.BOMBEAR = {
     cidade: "Eusébio",
     uf: "CE",
     cep: "[CEP]",
-    telefone: "(85) [TELEFONE]",
+    telefone: "(85) 99159-5312",
     whatsapp: "55[DDD][NUMERO]",           // só números, com 55 + DDD
     mensagemWhatsapp: "Olá! Vim pelo site da Bombear e quero ajuda com ",
     email: "[EMAIL]@[DOMINIO].com.br",

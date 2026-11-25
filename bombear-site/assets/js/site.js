@@ -202,7 +202,7 @@
             "<p>" + esc(D.empresa.frase) + "</p>" +
             '<ul class="rodape__info">' +
               "<li>" + ICONES.pin + "<span>" + esc(c.endereco) + ", " + esc(c.cidade) + " — " + esc(c.uf) + ", " + esc(c.cep) + "</span></li>" +
-              "<li>" + ICONES.fone + '<a href="tel:' + esc(c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></li>" +
+              "<li>" + ICONES.fone + '<a href="tel:' + esc("+55" + c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></li>" +
               "<li>" + ICONES.relogio + "<span>" + esc(c.horarioTexto) + "</span></li>" +
             "</ul>" + seloAberto("Aberto agora") +
             '<div class="sociais">' +
@@ -241,7 +241,7 @@
         '<div class="contato__acoes"><a class="btn btn--whats" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.whats + esc(k.botao) + ICONES.seta + "</a></div>" +
         '<dl class="contato__info">' +
           "<div><dt>Endereço</dt><dd>" + esc(c.endereco) + "<br>" + esc(c.cidade) + " — " + esc(c.uf) + "</dd></div>" +
-          '<div><dt>Telefone</dt><dd><a href="tel:' + esc(c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></dd></div>" +
+          '<div><dt>Telefone</dt><dd><a href="tel:' + esc("+55" + c.telefone.replace(/\D/g, "")) + '">' + esc(c.telefone) + "</a></dd></div>" +
           '<div><dt>E-mail</dt><dd><a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a></dd></div>" +
           "<div><dt>Horário</dt><dd>" + esc(c.horarioTexto) + "<br>" + seloAberto("Estamos abertos") + "</dd></div>" +
         "</dl>" +
