@@ -309,3 +309,15 @@ button { font: inherit; color: inherit; }
 .ajuda__rodape { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding-top: 28px; border-top: 1px solid var(--linha); }
 .ajuda__rodape p { margin: 0; max-width: 56ch; color: var(--marinho); font-weight: 600; }
 @media (max-width: 860px) { .ajuda { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Quem Somos: nossa história ---------- */
+.historia__grade { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.historia__imagem { position: sticky; top: calc(var(--header-h) + 24px); aspect-ratio: 1 / 1; background: var(--fundo-suave); border-radius: var(--raio-g); display: flex; align-items: center; justify-content: center; }
+.historia__imagem img { width: 62%; height: auto; }
+.historia__texto .titulo-m { margin-bottom: 28px; }
+.historia__texto > p:not(.rotulo) { margin: 0 0 18px; max-width: 62ch; }
+.historia__destaque { margin-top: 32px !important; padding-top: 28px; border-top: 1px solid var(--linha); font-family: var(--f-titulo); font-weight: 700; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.3; color: var(--marinho); }
+@media (max-width: 860px) {
+  .historia__grade { grid-template-columns: minmax(0, 1fr); }
+  .historia__imagem { position: static; max-width: 360px; width: 100%; }
+}

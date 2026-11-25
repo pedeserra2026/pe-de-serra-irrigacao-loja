@@ -42,6 +42,16 @@ horários reais antes de ligar, senão o site diz "aberto" com a loja fechada.
 Procure por `[` no `conteudo.js`. Cada `[COLCHETE]` é um dado que falta:
 WhatsApp, telefone, CEP, e-mail, horário, Instagram, Facebook, domínio e imagem de compartilhamento.
 
+## Fotos da loja (pendente até a loja ficar pronta)
+
+Na página Quem Somos, a faixa com 4 fotos da loja está desligada. No lugar dela aparece o símbolo
+da Bombear ao lado da nossa história. Quando a loja estiver montada:
+
+1. Fotografe: fachada, showroom com bombas funcionando, equipe atendendo no balcão, prateleira de tubos e conexões.
+2. Salve em `assets/img/` (WebP, até ~300 KB cada).
+3. Em `conteudo.js` → `paginaQuemSomos.fotos`, preencha cada `src`.
+4. Troque `paginaQuemSomos.mostrarFotos` para `true`.
+
 ## Testar no computador
 
 ```

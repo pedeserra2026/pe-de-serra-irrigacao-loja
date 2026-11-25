@@ -256,7 +256,25 @@ window.BOMBEAR = {
   paginaQuemSomos: {
     eyebrow: "Quem somos",
     titulo: "Água no lugar certo, na pressão certa.",
-    intro: "Somos a loja do Eusébio da família Pé de Serra Irrigação. Trouxemos para cá fornecedores consolidados, processos testados e o hábito de perguntar antes de vender.",
+    intro: "A Bombear nasce no Eusébio com a experiência e a tradição da Pé de Serra Irrigação. Trazemos fornecedores reconhecidos, processos consolidados e a essência do nosso atendimento: entender a necessidade de cada cliente antes de oferecer a solução certa.",
+    /* Imagem mostrada ao lado da nossa história enquanto a loja não está pronta */
+    imagemHistoria: { src: "assets/img/simbolo-cor.svg", alt: "Símbolo da Bombear" },
+    historia: {
+      rotulo: "Nossa história",
+      titulo: "A Bombear nasceu da vontade de ir além.",
+      paragrafos: [
+        "À frente da Pé de Serra Irrigação, em Maranguape, Lucas Jalles identificou no Eusébio uma região em crescimento, com novas oportunidades, diferentes perfis de clientes e um grande potencial de mercado. Assim surgiu o desejo de construir um novo negócio, paralelo à Pé de Serra Irrigação, levando consigo a experiência adquirida, mas com uma proposta própria, moderna e inovadora.",
+        "O que começou como o sonho de um tornou-se o projeto de dois. Com a chegada de Larissa, a Bombear ganhou novas perspectivas, criatividade e um olhar estratégico para a comunicação, o marketing e o posicionamento da marca.",
+        "Unindo conhecimento técnico, experiência comercial e criatividade, o casal decidiu apostar nesse novo desafio, compartilhando responsabilidades, sonhos e a vontade de construir algo que faça a diferença.",
+        "Mais do que comercializar produtos, queremos transformar a experiência de compra dos nossos clientes, oferecendo orientação técnica, atendimento próximo, tecnologia e soluções que realmente atendam às suas necessidades.",
+        "Acreditamos que um bom atendimento começa por saber ouvir, que a confiança se conquista todos os dias e que a inovação deve estar presente em cada detalhe do nosso negócio."
+      ],
+      destaque: "A Bombear é a materialização de um sonho compartilhado, construído com dedicação, coragem e a vontade constante de fazer melhor."
+    },
+    /* PENDENTE — fotos da loja: entram quando a loja estiver montada.
+       Para ligar: preencha os "src" abaixo e troque mostrarFotos para true.
+       Enquanto estiver false, a faixa de fotos não aparece. */
+    mostrarFotos: false,
     fotos: [
       { src: null, alt: "Fachada da loja" },
       { src: null, alt: "Showroom com bombas funcionando" },

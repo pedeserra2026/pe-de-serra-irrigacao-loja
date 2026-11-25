@@ -47,7 +47,7 @@
     /* ícones dos pilares, desenhados no traço da marca */
     gota: svg('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>', "pilar__icone", 1.6),
     lista: svg('<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/>', "pilar__icone", 1.6),
-    bomba: svg('<circle cx="9" cy="13" r="5"/><path d="M14 13h7M17 9v8M9 8V4h4"/>', "pilar__icone", 1.6),
+    bomba: svg('<rect x="1.5" y="9" width="10" height="8" rx="1.5"/><path d="M4.5 9v8M7.5 9v8"/><path d="M11.5 12h1.5v2h-1.5"/><circle cx="17.5" cy="13" r="4.5"/><circle cx="17.5" cy="13" r="1.5"/><path d="M19.5 9V4.5h3"/><path d="M3 20h18M5 17v3M18 17.5V20"/>', "pilar__icone", 1.6),
     casa: svg('<path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5h6v5"/>', "pilar__icone", 1.6)
   };
   /* contorno da casa do símbolo (mesmo desenho do logo), em volta da foto do topo */
@@ -372,7 +372,15 @@
   function renderQuemSomos() {
     var p = D.paginaQuemSomos;
     var icones = [ICONES.gota, ICONES.lista, ICONES.bomba, ICONES.casa];
-    var fotos = p.fotos.map(function (f) { return "<div>" + foto(f) + "</div>"; }).join("");
+    var fotos = p.mostrarFotos ? '<div class="container" style="margin-top:clamp(48px,6vw,80px)"><div class="mosaico">' +
+      p.fotos.map(function (f) { return "<div>" + foto(f) + "</div>"; }).join("") + "</div></div>" : "";
+    var h = p.historia;
+    var historia = h ? '<section class="secao historia" aria-labelledby="historia-titulo" style="padding-top:clamp(24px,3vw,40px)"><div class="container historia__grade">' +
+        '<div class="historia__imagem"><img src="' + esc(p.imagemHistoria.src) + '" alt="' + esc(p.imagemHistoria.alt) + '"></div>' +
+        '<div class="historia__texto"><p class="rotulo">' + esc(h.rotulo) + '</p><h2 class="titulo-m" id="historia-titulo">' + esc(h.titulo) + "</h2>" +
+        h.paragrafos.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") +
+        (h.destaque ? '<p class="historia__destaque">' + esc(h.destaque) + "</p>" : "") +
+        "</div></div></section>" : "";
     var pilares = p.pilares.map(function (it, i) {
       return '<li class="pilar">' + (icones[i] || ICONES.gota) + '<h3 class="titulo-p">' + esc(it.titulo) + "</h3><p>" + esc(it.texto) + "</p></li>";
     }).join("");
@@ -382,8 +390,8 @@
         '<h1 class="titulo-g" style="max-width:16ch">' + esc(p.titulo) + "</h1>" +
         '<p class="lead" style="margin-top:24px;max-width:58ch">' + esc(p.intro) + "</p>" +
       "</div></section>" +
-      '<div class="container"><div class="mosaico">' + fotos + "</div></div>" +
-      '<section class="secao"><div class="container">' +
+      historia + fotos +
+      '<section class="secao" style="background:var(--fundo-suave)"><div class="container">' +
         '<ul class="pilares">' + pilares + "</ul>" +
         '<div style="margin-top:56px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">' +
           '<a class="btn btn--azul" href="' + linkWhats() + '" target="_blank" rel="noopener">' + ICONES.chat + "Falar com a Bombear" + ICONES.seta + "</a>" +
