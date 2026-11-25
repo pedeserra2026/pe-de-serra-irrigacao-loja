@@ -57,7 +57,7 @@ window.BOMBEAR = {
     uf: "CE",
     cep: "[CEP]",
     telefone: "(85) 99159-5312",
-    whatsapp: "55[DDD][NUMERO]",           // só números, com 55 + DDD
+    whatsapp: "5585991595312",           // só números, com 55 + DDD
     mensagemWhatsapp: "Olá! Vim pelo site da Bombear e quero ajuda com ",
     email: "[EMAIL]@[DOMINIO].com.br",
     horarioTexto: "Seg a Sex — 08h00 às 19h00 · Sábado — 08h00 às 16h00",
@@ -78,7 +78,7 @@ window.BOMBEAR = {
   /* ---------- SEO POR PÁGINA ---------- */
   seo: {
     inicio:      { titulo: "Bombear · Bombas, irrigação e piscina no Eusébio-CE", descricao: "Loja de bombas, irrigação, piscina e jardinagem no Eusébio-CE. Diagnóstico antes da venda e atendimento pelo WhatsApp." },
-    quemSomos:   { titulo: "Quem somos · Bombear", descricao: "A Bombear nasceu da Pé de Serra Irrigação. Conheça nosso jeito de atender no Eusébio-CE." },
+    quemSomos:   { titulo: "Nossas raízes, nosso futuro · Bombear", descricao: "A Bombear nasceu da Pé de Serra Irrigação. Conheça nosso jeito de atender no Eusébio-CE." },
     produtos:    { titulo: "Produtos · Bombear", descricao: "Tipos de bomba, irrigação, piscina, tubos e elétricos: o que cada um faz e onde se aplica. Bombear, Eusébio-CE." },
     condominios: { titulo: "Condomínios · Bombear", descricao: "Bombas de recalque, piscina, irrigação e elétrica de bombas para condomínios do Eusébio e região, com nota fiscal e cotação rápida." },
     imagemCompartilhamento: "assets/img/[og-imagem].jpg"
@@ -87,7 +87,7 @@ window.BOMBEAR = {
   /* ---------- MENU ---------- */
   menu: [
     { rotulo: "Produtos", href: "produtos.html", pagina: "produtos", dropdown: true },
-    { rotulo: "Quem Somos", href: "quem-somos.html", pagina: "quemSomos" },
+    { rotulo: "Nossas raízes, nosso futuro", href: "quem-somos.html", pagina: "quemSomos" },
     { rotulo: "Marcas", href: "index.html#marcas" },
     { rotulo: "Contato", href: "index.html#contato" }
   ],
@@ -218,7 +218,7 @@ window.BOMBEAR = {
 
   /* ---------- HOME: QUEM SOMOS (resumo) ---------- */
   quemSomosResumo: {
-    eyebrow: "Quem somos",
+    eyebrow: "Nossas raízes, nosso futuro",
     titulo: "Gente que entende de água",
     paragrafo: "A Bombear nasceu da Pé de Serra Irrigação, que há 3 anos dimensiona bombas e sistemas de irrigação no Ceará. No Eusébio, trouxemos o mesmo jeito de trabalhar: entender o problema antes de indicar o produto.",
     itens: [
@@ -254,7 +254,7 @@ window.BOMBEAR = {
 
   /* ---------- PÁGINA QUEM SOMOS ---------- */
   paginaQuemSomos: {
-    eyebrow: "Quem somos",
+    eyebrow: "Nossas raízes, nosso futuro",
     titulo: "Água no lugar certo, na pressão certa.",
     intro: "A Bombear nasce no Eusébio com a experiência e a tradição da Pé de Serra Irrigação. Trazemos fornecedores reconhecidos, processos consolidados e a essência do nosso atendimento: entender a necessidade de cada cliente antes de oferecer a solução certa.",
     /* Imagem mostrada ao lado da nossa história enquanto a loja não está pronta */
