@@ -195,8 +195,8 @@ window.BOMBEAR = {
       intro: "Equipamentos e reposição para manutenção industrial, com foco em reduzir o tempo de máquina parada.",
       tipos: [
         { nome: "Bombas centrífugas industriais", descricao: "Para transferência contínua de água em processos e utilidades.", aplicacoes: ["Processos", "Torres de resfriamento", "Utilidades"], foto: { src: "assets/img/hero-industria.webp", alt: "Bomba centrífuga industrial" } },
-        { nome: "Placas solares", descricao: "Painéis fotovoltaicos que alimentam bombas solares e reduzem o custo de energia.", aplicacoes: ["Bombas solares", "Locais sem rede elétrica", "Redução da conta de energia"], foto: { src: "assets/img/tipos/solar.webp", alt: "Placas solares em campo" } },
-        { nome: "Peças de reposição", descricao: "Selos mecânicos, rotores e rolamentos para manter a bomba em operação.", aplicacoes: ["Manutenção preventiva", "Manutenção corretiva"], foto: { src: null, alt: "Peças de reposição de bomba" } }
+        { nome: "Placas solares", descricao: "Painéis fotovoltaicos que alimentam bombas solares e reduzem o custo de energia.", aplicacoes: ["Bombas solares", "Locais sem rede elétrica", "Redução da conta de energia"], foto: { src: "assets/img/tipos/placas-solares.webp", alt: "Técnico instalando placas solares em telhado" } },
+        { nome: "Peças de reposição", descricao: "Selos mecânicos, rotores e rolamentos para manter a bomba em operação.", aplicacoes: ["Manutenção preventiva", "Manutenção corretiva"], foto: { src: "assets/img/tipos/pecas.webp", alt: "Selo mecânico de bomba desmontado, com anéis de vedação" } }
       ] }
   ],
 
