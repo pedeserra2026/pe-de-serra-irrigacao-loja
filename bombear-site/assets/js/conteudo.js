@@ -177,7 +177,7 @@ window.BOMBEAR = {
         { nome: "PVC soldável", descricao: "Para água fria em instalações prediais e residenciais.", aplicacoes: ["Residências", "Caixas d'água", "Recalque"], foto: { src: "assets/img/tipos/pvc-soldavel.webp", alt: "Dois tubos de PVC soldável azul" } },
         { nome: "PVC roscável", descricao: "Para ligações que precisam ser desmontadas na manutenção.", aplicacoes: ["Ligação de bombas", "Cavaletes", "Manutenção"], foto: { src: "assets/img/tipos/pvc-roscavel.webp", alt: "Tubo de PVC azul com bolsa" } },
         { nome: "PEBD", descricao: "Tubo flexível de polietileno de baixa densidade, leve e fácil de instalar.", aplicacoes: ["Irrigação", "Linhas de gotejamento", "Ligações rurais"], foto: { src: "assets/img/tipos/pebd.webp", alt: "Duas bobinas de tubo PEBD preto" } },
-        { nome: "Registros e válvulas", descricao: "Controlam, bloqueiam ou impedem o retorno da água.", aplicacoes: ["Bombas", "Reservatórios", "Redes prediais"], foto: { src: null, alt: "Registros e válvulas" } }
+        { nome: "Registros e válvulas", descricao: "Controlam, bloqueiam ou impedem o retorno da água.", aplicacoes: ["Bombas", "Reservatórios", "Redes prediais"], foto: { src: "assets/img/tipos/registros.webp", alt: "Registro de gaveta em bronze com volante vermelho" } }
       ] },
 
     { id: "eletricos", nome: "Elétricos", subtitulo: "Tudo o que a bomba precisa para ligar com segurança", rascunho: true,
