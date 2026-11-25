@@ -165,7 +165,7 @@ window.BOMBEAR = {
       foto: { src: "assets/img/capa-jardinagem.webp", alt: "Jardim com aspersor, regador, enrolador de mangueira e ferramentas" },
       intro: "Itens do dia a dia de quem cuida de jardim, horta e gramado.",
       tipos: [
-        { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: "assets/img/tipos/mangueiras.webp", encaixe: "inteira", alt: "Rolo de mangueira com engates, registro e microaspersores" } },
+        { nome: "Mangueiras e engates", descricao: "Para rega manual, lavagem e ligação rápida de acessórios.", aplicacoes: ["Rega", "Lavagem de áreas externas"], foto: { src: "assets/img/tipos/mangueiras-engate.webp", alt: "Mão encaixando engate rápido de mangueira na torneira do jardim" } },
         { nome: "Ferramentas manuais", descricao: "Para plantio, poda e manutenção do jardim.", aplicacoes: ["Plantio", "Poda", "Manutenção"], foto: { src: null, alt: "Ferramentas de jardinagem" } },
         { nome: "Pulverizadores", descricao: "Para aplicar adubos foliares e defensivos.", aplicacoes: ["Hortas", "Jardins", "Pomares"], foto: { src: null, alt: "Pulverizador costal" } }
       ] },
