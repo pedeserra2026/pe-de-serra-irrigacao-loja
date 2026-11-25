@@ -175,7 +175,7 @@ window.BOMBEAR = {
       intro: "A tubulação certa evita perda de pressão e vazamento. Veja onde cada tipo se aplica.",
       tipos: [
         { nome: "PVC soldável", descricao: "Para água fria em instalações prediais e residenciais.", aplicacoes: ["Residências", "Caixas d'água", "Recalque"], foto: { src: "assets/img/tipos/pvc-soldavel.webp", alt: "Dois tubos de PVC soldável azul" } },
-        { nome: "PVC roscável", descricao: "Para ligações que precisam ser desmontadas na manutenção.", aplicacoes: ["Ligação de bombas", "Cavaletes", "Manutenção"], foto: { src: null, alt: "Conexões roscáveis" } },
+        { nome: "PVC roscável", descricao: "Para ligações que precisam ser desmontadas na manutenção.", aplicacoes: ["Ligação de bombas", "Cavaletes", "Manutenção"], foto: { src: "assets/img/tipos/pvc-roscavel.webp", alt: "Tubo de PVC azul com bolsa" } },
         { nome: "PEBD", descricao: "Tubo flexível de polietileno de baixa densidade, leve e fácil de instalar.", aplicacoes: ["Irrigação", "Linhas de gotejamento", "Ligações rurais"], foto: { src: null, alt: "Bobina de tubo PEBD" } },
         { nome: "Registros e válvulas", descricao: "Controlam, bloqueiam ou impedem o retorno da água.", aplicacoes: ["Bombas", "Reservatórios", "Redes prediais"], foto: { src: null, alt: "Registros e válvulas" } }
       ] },
